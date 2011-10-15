@@ -1,0 +1,13 @@
+#TeXlipse project settings
+#Tue Sep 25 20:20:54 CEST 2007
+builderNum=2
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=Elo1.tex
+outputFile=Elo1.pdf
+langSpell=en
+markDer=true
+srcDir=
