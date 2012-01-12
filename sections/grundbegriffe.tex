@@ -1,0 +1,91 @@
+\section{Grundbegriffe \formelbuch{1}}
+	
+		\subsection{DC- und Kleinsignal-Ersatzschaltung \formelbuch{1-15}}
+			\begin{minipage}{18cm}
+            \includegraphics[width=18cm]{./bilder/dc-kleinsignal-ersatz.png}
+            \end{minipage}
+
+		\subsection{Verstärkertypen \formelbuch{1-26}}
+			\begin{minipage}{10cm}
+            \includegraphics[width=10cm]{./bilder/verstaerkertypen.png}
+            \end{minipage}
+			\begin{minipage}{8cm}
+            {\bf Verstärkerfaktoren:}\\
+            - Spannungs-Verstärkerfaktor \hspace{4mm}$A_v$ (ohne Einheit)\\
+            - Strom-Verstärkungsfaktor \hspace{6mm} $A_i$ (ohne Einheit)\\
+            - Transkonduktanz \hspace{19mm} $g_m$ (Einheit $\Omega^{-1}$)\\
+            - Transresistanz \hspace{24mm} $r_m$ (Einheit $\Omega$)\\ \\
+            Dynam. Eingangswiderstand \hspace{5mm} $r_{in}$ ($\Omega$)\\
+            Dynam. Ausgangswiderstand \hspace{4mm} $r_{out}$ ($\Omega$)\\ \\
+            {\bf Bei idealen gesteuerten Quellen gelten folgende Werte für
+            $r_{in}$ und $r_{out}$:}\\
+            Bei Stromsteuerung ist \hspace{13.5mm} $r_{in}=0 \Omega$\\
+            Bei Spannungssteuerung ist \hspace{6.5mm} $r_{in}=\infty \Omega$\\
+            Beim Stromausgang ist \hspace{13.5mm} $r_{out}=\infty \Omega$\\
+            Beim Spannungsausgang ist \hspace{6.5mm} $r_{out}=0 \Omega$\\
+            
+            {\bf Invertierender Verstärker:}\\
+            Verstarkungsfaktor ist negativ $(A<0)$\\
+            $v_{out}$ verläuft {\it gegenphasig} zu $v_{in}$\\
+            
+            {\bf Nichtinvertierender Verstärker:}\\
+            Verstärkungsfaktor ist positiv $(A>0)$\\
+            $v_{out}$ verläuft {\it gleichphasig} zu $v_{in}$
+            \end{minipage}
+	
+	
+		\subsection{Dezibel (dB) \formelbuch{1-25}}
+			\begin{tabular}{p{10cm}p{8cm}}
+        		Das Dezibel der Verhältniszahl $V$ wird wie folgt berechnet:
+        		& \fbox{$V_{dB}=20 log \left| V\right|$}\\
+        		Aus der gegebenen Dezibel-Zahl $V_{dB}\to$ lineare Verhältniszahl:
+        		& \fbox{$V=10^{\frac{V_{dB}}{20dB}}$}\\ \\
+        \end{tabular}
+
+\hrule
+
+		\subsection{Übertragungsfaktoren \formelbuch{1-24}}
+			\begin{minipage}{18cm}
+	   	    	\includegraphics[width=16cm]{./bilder/uebertragungsfaktoren.png}
+       		\end{minipage}
+
+\hrule
+
+		\subsection{Grosssignalwiderstand \formelbuch{1-11}}
+			Gleichstromwiderstand $R$ \hspace{15mm} $R=\frac{V_R}{I_R}$
+			$\left(\frac{\mbox{Gleichspannung im Arbeitspunkt}}{\mbox{Gleichstrom im
+			Arbeitspunkt}}\right)$\\ \\
+			Bei {\it linearen Widerständen} hängt der Grosssignalwiderstand
+			{\it nicht} vom Arbeitspunkt ab.\\
+			Bei {\it nicht linearen Widerständen} hängt der Grosssignalwiderstand
+			vom Arbeitspunkt ab. $\Rightarrow$ Interessiert aber in der Elektronik nicht.
+			Sind immer am Kleinsignalwiderstand $r$ intressiert.\\
+		
+\hrule
+		
+		\subsection{Kleinsignalwiderstand (dynamischer oder differenzieller
+		Widerstand) \formelbuch{1-13}}
+			Kleinsignalwiderstand $r$ \hspace{15mm} $r_L=\frac{dV_L}{dI_L}$ In der Praxis
+			verwenden wir die Näherung $r_L=\frac{dV_L}{dI_L}\approx \frac{\Delta
+			V_L}{\Delta I_L}$\\ \\
+			Wenn die Strom-Spannungskennlinie $V=f(I)$ mathematisch gegeben ist, erhalten
+			wir den Kleinsignalwiderstand $r_L$ durch Differenzierung der
+			Kennliniengleichung $V_L=f(I_L)$ im Arbeitspunkt $(I_L, V_L)$.\\
+			Bei {\it nichtlinearen Zweipolen} hängt der Kleinsignalwiderstand $r$
+			vom Arbeitspunkt ab, aber $r\neq R$\\
+			Bei {\it linearen Zweipolen} ist der Kleinsignalwiderstand $r$
+			identisch mit dem DC-Widerstand $R$. Desshalb ist $r$ bei {\it linearen
+			Zweipolen} vom Arbeitspunkt {\it unabhängig}.\\
+		
+\hrule
+		
+		\subsection{Überlagerungssatz für lineare Systeme \formelbuch{1-14}}
+			Wenn das Eingangssignal eines linearen Verstärkers (oder allgemein eines
+			linearen Netzwerkes) aus einer Summe von zwei verschiedenen Signalen besteht,
+			dürfen wir die beiden Teilsignale getrennt mit dem Verstärkungsfaktor
+			multiplizieren und die beiden resultierenden Ausgangssignale am Ausgang
+			addieren.\\
+			\hspace*{10mm}
+			\fbox{$v_{out \hspace{1mm}
+			total}=(v_{in1}+v_{in2})A=v_{in1}A+v_{in2}A=v_{out1}+v_{out2}=v_{in
+			\hspace{1mm}total}A$}\\
