@@ -216,7 +216,7 @@
           	\includegraphics[width=6cm]{./bilder/integrator.png} 
         \end{minipage}\\
 
-		\subsection{Fehlereinflüsse des Opamp}
+	\subsection{Fehlereinflüsse des Opamp}
 		\subsubsection{Verstärkungsfehler bei endlicher Closed-Loop-Verstärkung}
 			\begin{minipage}{12cm}
 				\begin{tabular}{ll}
@@ -294,37 +294,39 @@
       $V_{out\hspace{1mm}E\hspace{1mm}total}=A_{CL+}\cdot\left[\left|V_{OS}\right|+\frac{\left|V_{CM}\right|}{CMRR}
             	+\frac{\left|\Delta V_{Supply}\right|}{PSRR}\right]+\left|I_{OS}\right|R_F$\\
 
-		\subsection{Dynamische Eigenschaften des Opamp}
-			\begin{tabular}{ll}
-				dB-Verstärkung:&
-        $A_{dB}=20 \cdot log A_{lin}$\\
-        lineare Verstärkung:&
-        $A_{lin}=10^{\frac{A_{dB}}{20}}$\\
-			\end{tabular}
-      Verstärkungs-Bandbreite-Produkt GBP (Gain-Bandwidth-Product)\\
-      \begin{tabular}{ll}
-        Bandbreite des gegengekoppelten {\it nichtinvertierenden} Verstärkers:&
-        $f_{CL+}=\frac{GBP}{A_{CL \hspace{1mm}lin}}$\\
-        Bandbreite des gegengekoppelten {\it invertierenden} Verstärkers: &
-        $f_{CL}=\frac{GBP}{\left| A_{CL \hspace{1mm}lin}\right|+1}$\\
-      \end{tabular}
-      {\bf Gesetz vom Konstanten Verstärkungs-Bandbreite-Produkt:} \\ \\
-      	Für jeden Punkt auf der mit -20dB abfallenden Frequenzgang-Gerade ist das
-        Produkt aus Verstärkung und zugehöriger Frequenz konstant gleich GBP, d.h. $A_{lin}\cdot f=GBP=konst$\\
-      
-		\subsubsection{Slew-Rate}
+	\subsection{Dynamische Eigenschaften des Opamp}
 		\begin{tabular}{ll}
-			min. SR bei einem Sprungsignal &
-			$SR\geq\frac{0.8V_{step}}{t_{anstieg}}$\\ 
-			min. SR bei einem Sinussignal & 
-			$SR\geq V_{amplitude}\omega=V_{amplitude}2\pi f$\\
+			dB-Verstärkung:&
+			$A_{dB}=20 \cdot log A_{lin}$\\
+			lineare Verstärkung:&
+			$A_{lin}=10^{\frac{A_{dB}}{20}}$\\
 		\end{tabular}
+		Verstärkungs-Bandbreite-Produkt GBP (Gain-Bandwidth-Product)\\
+		\begin{tabular}{ll}
+			Bandbreite des gegengekoppelten {\it nichtinvertierenden} Verstärkers:&
+			$f_{CL+}=\frac{GBP}{A_{CL \hspace{1mm}lin}}$\\
+			Bandbreite des gegengekoppelten {\it invertierenden} Verstärkers: &
+			$f_{CL}=\frac{GBP}{\left| A_{CL \hspace{1mm}lin}\right|+1}$\\
+		\end{tabular}\\
+		{\bf Gesetz vom Konstanten Verstärkungs-Bandbreite-Produkt:} \\
+		Für jeden Punkt auf der mit -20dB abfallenden Frequenzgang-Gerade ist das
+		Produkt aus Verstärkung und zugehöriger Frequenz konstant gleich GBP, d.h. $A_{lin}\cdot f=GBP=konst$\\
+		\subsubsection{Slew-Rate}
+			\begin{tabular}{ll}
+				min. SR bei einem Sprungsignal &
+				$SR\geq\frac{0.8V_{step}}{t_{anstieg}}$\\ 
+				min. SR bei einem Sinussignal & 
+				$SR\geq V_{amplitude}\omega=V_{amplitude}2\pi f$\\
+			\end{tabular}
 
-		\includegraphics[height=5cm]{./bilder/slew-rate.png}\\
-		Anstiegszeit des Ausgangs \\
-		$t_{rout} = \sqrt{t_{rin}^2 + t_{rAmp}^2}$ \\
-		$t_{rin} = $ Anstiegszeit des Eingangssignals \\
-		$t_{rout} = $ Anstiegszeit des Ausgangssignals \\
-		$t_{rAmp} = \frac{0.35}{f_{bw}} = $ Eigenanstiegszeit des Verstärkers \\
-		$f_{bw} = $ Kleinsignalbandbreite des Verstärkers \\
+			\includegraphics[height=5cm]{./bilder/slew-rate.png}\\
+
+			{\bf Anstiegszeit des Ausgangs:} \\
+			\begin{tabular}{ll}
+				$t_{rout}$ & = $\sqrt{t_{rin}^2 + t_{rAmp}^2}$ \\
+				$t_{rin}$  & = Anstiegszeit des Eingangssignals \\
+				$t_{rout}$ & = Anstiegszeit des Ausgangssignals \\
+				$t_{rAmp}$ & = $\frac{0.35}{f_{bw}} = $ Eigenanstiegszeit des Verstärkers \\
+				$f_{bw}$   & = Kleinsignalbandbreite des Verstärkers \\
+			\end{tabular}
 
