@@ -1,6 +1,6 @@
-\section{Operationsverstärker \formelbuch{3}}
+\section{Operationsverstärker}
 	\subsection{Opamp Schaltungen}
-		\subsubsection{Invertierender Verstärker \formelbuch{3-7}}
+		\subsubsection{Invertierender Verstärker}
 			Beim invertierenden Verstärker ist die Ausgangsspannung gegenphasig
       zur Eingangsspannung.\\
 			\begin{minipage}[T]{12cm}
@@ -20,7 +20,7 @@
        	\includegraphics[width=6cm]{./bilder/i-verstaerker.png}
       \end{minipage}\\
       
-		\subsubsection{Nichtinvertierender Verstärker \formelbuch{3-10}}
+		\subsubsection{Nichtinvertierender Verstärker}
 			Beim nichtinvertierenden Verstärker ist die Ausgangsspannung
       gleichphasig zur Eingangsspannung.\\ 
 			\begin{minipage}[T]{12cm}
@@ -41,7 +41,7 @@
       	\includegraphics[width=6cm]{./bilder/ni-verstaerker.png}
       \end{minipage}\\
 
-		\subsubsection{Verstärker mit mehreren Eingängen \formelbuch{3-12}}
+		\subsubsection{Verstärker mit mehreren Eingängen}
 			\begin{minipage}{12.5cm}
             	$A_{CL1}=-\frac{R_F}{R_1}$\\
             	$A_{CL2}=-\frac{R_F}{R_2}$\\
@@ -53,7 +53,7 @@
       	\includegraphics[width=5.5cm]{./bilder/3-eingaenge.png}
       \end{minipage}\\
 
-		\subsubsection{Invertierender Addierer \formelbuch{3-20}}
+		\subsubsection{Invertierender Addierer}
 			\begin{minipage}[b]{12cm}
             $V_{out}=A_{CL1}V_{IN1}+A_{CL2}V_{IN2}+\ldots$\\
             $V_{out}=- \frac{R_F}{R_1}V_{IN1}- \frac{R_F}{R_2}V_{IN2}+\ldots$\\
@@ -64,7 +64,7 @@
       	\includegraphics[width=6cm]{./bilder/invertadd.png}
       \end{minipage}\\
 
-		\subsubsection{Gewichteter Subtrahierer \formelbuch{3-20}}
+		\subsubsection{Gewichteter Subtrahierer}
 			\begin{minipage}[b]{12cm}
             	$A_{CL1}=- \frac{R_F}{R_1}$\\
             	$A_{CL2}=
@@ -78,7 +78,7 @@
             \end{minipage}\\
 
 
-		\subsubsection{Mehrfach-Addierer-Subtrahierer \formelbuch{3-23}} 		
+		\subsubsection{Mehrfach-Addierer-Subtrahierer} 		
 		\begin{minipage}[b]{12cm}
 		1. Man waehlt $R_{F}$\\
 		2. Man waehlt $R_{P}$, wobei oft $R_{P}=R_{F}$ gesetzt wird. (optional)\\
@@ -91,7 +91,7 @@
           	\includegraphics[width=6cm]{./bilder/mehrfach-addierer-subtrahierer.png} 
         \end{minipage}\\
 
-		\subsubsection{Instrumentenverstärker \formelbuch{3-25}}
+		\subsubsection{Instrumentenverstärker}
 		\begin{minipage}[b]{12cm}
 		$A_{diff}=\frac{V_{out}}{V_{diff}}=\frac{V_{P}-V_{N}}{V_{inP}-V_{inN}}
 		=\frac{2R_{1}+P}{P}=\frac{2R_{1}}{P}+1$\\
@@ -100,7 +100,7 @@
           	\includegraphics[width=6cm]{./bilder/Instrumentationsverstaerker.png} 
         \end{minipage}\\
 
-		\subsubsection{Differenzverstärker \formelbuch{3-21}}
+		\subsubsection{Differenzverstärker}
 			\begin{minipage}[b]{12cm}
             	$A_{diff}=\frac{v_{out}}{(v_{in2}-v_{in1})}$\\
             	$v_{out} = \frac{R_F}{R_1}\cdot (v_{in2}-v_{in1})$\\
@@ -112,7 +112,7 @@
             \end{minipage}\\
 
 
-		\subsubsection{Komparatorschaltung \formelbuch{3-27}}
+		\subsubsection{Komparatorschaltung}
 			\begin{minipage}{18cm}
             	Wenn ein Operationsverstärker als {\it Verstärker ohne
             	Gegenkopplung} betrieben wird, spricht man von einer {\it
@@ -135,7 +135,7 @@
             	V_{diff}\pm V_{OS}>0$\\
             \end{minipage}
 
-		\subsubsection{Schmitt-Trigger \formelbuch{3-31}}
+		\subsubsection{Schmitt-Trigger}
 		Nichtinvertierender Schmitt-Trigger\\
 			\begin{minipage}{9cm}
 	          	\includegraphics[width=8cm]{./bilder/n-schmitt.png} 
@@ -185,7 +185,7 @@
             \end{tabular}\\
             \end{minipage}
 	
-		\subsubsection{Differentiator \formelbuch{3-42}}
+		\subsubsection{Differentiator}
 			\begin{minipage}[b]{12cm}
            		Beim Differentiator gilt $v_{out}=v_N-i_1 \cdot R_F$ wobei
            		$v_N=0$\\
@@ -205,7 +205,7 @@
            		\includegraphics[width=6cm]{./bilder/differentiator.png}
            	\end{minipage}
 
-		\subsubsection{Integrator \formelbuch{3-45}} 
+		\subsubsection{Integrator} 
 		\vspace{1cm}
 		\begin{minipage}[b]{12cm}
 		$v_{out}=-\frac{1}{RC} \int{v_{in}}dt +
@@ -216,9 +216,8 @@
           	\includegraphics[width=6cm]{./bilder/integrator.png} 
         \end{minipage}\\
 
-		\subsection{Fehlereinflüsse des Opamp \formelbuch{3-51}}
-		\subsubsection{Verstärkungsfehler bei endlicher Closed-Loop-Verstärkung
-		\formelbuch{3-51}}
+		\subsection{Fehlereinflüsse des Opamp}
+		\subsubsection{Verstärkungsfehler bei endlicher Closed-Loop-Verstärkung}
 			\begin{minipage}{12cm}
 				\begin{tabular}{ll}
                	beim nichtinvertierenden Verstärker &
@@ -236,7 +235,7 @@
                	\includegraphics[width=6cm]{./bilder/verstaerkungsfaktor.png}
             \end{minipage}
 
-		\subsubsection{Common-Mode-Fehler \formelbuch{3-60}}
+		\subsubsection{Common-Mode-Fehler}
 				\begin{tabular}{llll}
 					Mittelspannung: &
 					$V_M=\frac{V_{pos}+V_{neg}}{2}$ &
@@ -260,7 +259,7 @@
           log\frac{dV_{CM}}{dV_{OS}}$\\
 				\end{tabular}
 		
-		\subsubsection{Offsetspannungsfehler \formelbuch{3-53}}
+		\subsubsection{Offsetspannungsfehler}
 				\begin{tabular}{ll}
 					Im Closed-Loop-Betrieb ist die Ausgangs-Fehlerspannung: &
 					$V_{out \hspace{1mm}E}=V_{OS}\left( 1+\frac{R_F}{R_1}\right)$\\
@@ -270,7 +269,7 @@
           $V_{out \hspace{1mm}E}=V_{OS}\cdot {A_{CL}}^{+}$\\
          \end{tabular}
 		
-		\subsubsection{Eingangsstromfehler \formelbuch{3-54}}
+		\subsubsection{Eingangsstromfehler}
 			\begin{minipage}{18cm}
               Wenn die Opamp-Eingangsströme gleich gross sind
               ($I_{N}=I_{P}$) und die Gleichstromwiderstände,
@@ -288,7 +287,7 @@
             \end{minipage}\\
 			\includegraphics[width=8cm]{./bilder/eingangsstromfehler.png}
 
-		\subsubsection{Eingangsstromkompensation ohne AC-Zweige \formelbuch{3-54}}
+		\subsubsection{Eingangsstromkompensation ohne AC-Zweige}
 			\begin{minipage}[b]{6cm}
             	\includegraphics[height=3cm]{./bilder/spannungsfolger.png}\\
             	\centerline{{\bf Spannungsfolger}}\\ \\
@@ -316,7 +315,7 @@
 				\fbox{$V_{out \hspace{1mm}E}=\left|I_{OS}\right| \cdot R_F$}\\
 			\end{minipage}
 
-		\subsubsection{Power-Supply-Fehler \formelbuch{3-58}}
+		\subsubsection{Power-Supply-Fehler}
             Die grösse $PSRR$ (Power Supply Rejection Ratio, Speisespannungsunterdrückung)\\
             \begin{tabular}{ll}
             Offsetspannung:&
@@ -330,11 +329,11 @@
             \end{tabular}
             
 
-		\subsubsection{Zusammenfassung aller Fehlereinflüsse \formelbuch{3-63}}
+		\subsubsection{Zusammenfassung aller Fehlereinflüsse}
       $V_{out\hspace{1mm}E\hspace{1mm}total}=A_{CL+}\cdot\left[\left|V_{OS}\right|+\frac{\left|V_{CM}\right|}{CMRR}
             	+\frac{\left|\Delta V_{Supply}\right|}{PSRR}\right]+\left|I_{OS}\right|R_F$\\
 
-		\subsection{Dynamische Eigenschaften des Opamp \formelbuch{3-66}}
+		\subsection{Dynamische Eigenschaften des Opamp}
 			\begin{tabular}{ll}
 				dB-Verstärkung:&
         $A_{dB}=20 \cdot log A_{lin}$\\
