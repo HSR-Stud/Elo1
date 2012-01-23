@@ -234,31 +234,6 @@
 			\begin{minipage}{6cm}
                	\includegraphics[width=6cm]{./bilder/verstaerkungsfaktor.png}
             \end{minipage}
-
-		\subsubsection{Common-Mode-Fehler}
-				\begin{tabular}{llll}
-					Mittelspannung: &
-					$V_M=\frac{V_{pos}+V_{neg}}{2}$ &
-					Opamp-Eingangsspannung: &
-					$V_{OP\ IN}=\frac{V_P+V_N}{2}$\\					
-					Offsetspannung: &
-					$V_{OS}=\frac{V_{CM}}{CMRR_{lin}}$ &
-					Ausgangs-Fehlerspannung: &
-					$V_{out \hspace{1mm} E}=\left|V_{OS}\right| \cdot A_{CL+}=\left|
-					\frac{\Delta V_{CM}}{CMRR_{lin}}\right|A_{CL+}$\\
-				\end{tabular}
-				
-				\begin{tabular}{ll}
-        	Common-Mode-Spannung: &
-          $V_{CM}=V_{OP \hspace{1mm} IN}-V_M=V_P- \frac{V_{pos}+V_{neg}}{2} \mbox{ bzw. }V_N- \frac{V_{pos}+V_{neg}}{2}$\\
-          & $V_{CM}\frac{V_{P}+V_{N}}{2}-V_M$ \\
-          Lineare Definition: &
-          $CMRR_{lin}=\frac{dV_{CM}}{dV_{OS}}=10^{\frac{CMRR_{dB}}{20}}=\frac{A_{OL}}{A_{CM}}$\\
-          Logarithmische Definition: &
-          $CMRR_{dB}=20 \cdot log(CMRR_{lin})=20 \cdot
-          log\frac{dV_{CM}}{dV_{OS}}$\\
-				\end{tabular}
-		
 		\subsubsection{Offsetspannungsfehler}
 				\begin{tabular}{ll}
 					Im Closed-Loop-Betrieb ist die Ausgangs-Fehlerspannung: &
@@ -315,20 +290,6 @@
 				\fbox{$V_{out \hspace{1mm}E}=\left|I_{OS}\right| \cdot R_F$}\\
 			\end{minipage}
 
-		\subsubsection{Power-Supply-Fehler}
-            Die grösse $PSRR$ (Power Supply Rejection Ratio, Speisespannungsunterdrückung)\\
-            \begin{tabular}{ll}
-            Offsetspannung:&
-            $V_{OS}=\frac{\Delta V_{Supply}}{PSRR_{lin}}$\\
-            Ausgangsspannungsfehler:&
-            $V_{out \hspace{1mm}E}=\left|V_{OS}\right| A_{CL+}=\left| \frac{\Delta V_{Supply}}{PSRR_{lin}}\right| A_{CL+}$\\
-            Lineare Definition: &
-            $PSRR_{lin}=\frac{dV_{Supply}}{dV_{OS}}=10^{\frac{PSRR_{dB}}{20}}$\\
-            Logarithmische Definition:&
-            $PSRR_{dB}=20 log PSRR_{lin}=20 log \frac{dV_{Supply}}{dV_{OS}}$\\
-            \end{tabular}
-            
-
 		\subsubsection{Zusammenfassung aller Fehlereinflüsse}
       $V_{out\hspace{1mm}E\hspace{1mm}total}=A_{CL+}\cdot\left[\left|V_{OS}\right|+\frac{\left|V_{CM}\right|}{CMRR}
             	+\frac{\left|\Delta V_{Supply}\right|}{PSRR}\right]+\left|I_{OS}\right|R_F$\\
@@ -360,3 +321,10 @@
 		\end{tabular}
 
 		\includegraphics[height=5cm]{./bilder/slew-rate.png}\\
+		Anstiegszeit des Ausgangs \\
+		$t_{rout} = \sqrt{t_{rin}^2 + t_{rAmp}^2}$ \\
+		$t_{rin} = $ Anstiegszeit des Eingangssignals \\
+		$t_{rout} = $ Anstiegszeit des Ausgangssignals \\
+		$t_{rAmp} = \frac{0.35}{f_{bw}} = $ Eigenanstiegszeit des Verstärkers \\
+		$f_{bw} = $ Kleinsignalbandbreite des Verstärkers \\
+
