@@ -1,6 +1,40 @@
 \section{Grundbegriffe}
 	
 		\subsection{DC- und Kleinsignal-Ersatzschaltung}
+			%{\small
+			\begin{tabular}{|p{4.3cm}|p{3.93cm}|p{4.5cm}|p{4.5cm}|}
+			\hline
+			& \footnotesize{\textbf{DC-Ersatzschaltung}} 
+			& \footnotesize{\textbf{Kleinsignal-Ersatztschaltung mit L und C}}	
+			& \footnotesize{\textbf{Kleinsignal-Ersatztschaltung ohne L\footnotemark[1] und C\footnotemark[2]}}
+			\\ \hline
+			\footnotesize{\textbf{Gleichspannungsquelle (V)}} & Übernehmen & Kurzschliessen\footnotemark[3] & Kurzschliessen\footnotemark[3] 
+			\\ \hline
+			\footnotesize{\textbf{Gleichstromquelle (I)}} & Übernehmen & Entfernen\footnotemark[4] & Entfernen\footnotemark[4] 
+			\\ \hline
+			\footnotesize{\textbf{Wechselspannungsquelle (v)}} & Kurzschliessen\footnotemark[3] & Übernehmen & Übernehmen
+			\\ \hline
+			\footnotesize{\textbf{Wechselstromquelle (i)}} & Entfernen\footnotemark[4] & Übernehmen & Übernehmen
+			\\ \hline
+			\footnotesize{\textbf{L}} & Kurzschliessen\footnotemark[5] & Übernehmen & Entfernen wenn L ``sehr gross''\footnotemark[1]
+			\\ \hline
+			\footnotesize{\textbf{C}} & Entfernen\footnotemark[6] & Übernehmen & Kurzschliessen wenn C ``sehr gross''\footnotemark[2]
+			\\ \hline
+			\footnotesize{\textbf{Nichtlineares Bauteil}} (im Beispiel die Diode $D_1$) 
+			& Ersetzten durch die DC-Ersatztschaltung des nichtlinearen Bauteils
+			& Ersetzten durch die Kleinsignal-Ersatzschaltung des nichtlinearen Bauteils
+			& Ersetzten durch die Kleinsignal-Ersatzschaltung des nichtlinearen Bauteils
+			\\ \hline 
+			\end{tabular}
+			%}
+			\footnotetext[1]{L ist eine Sperrdrossel}
+			\footnotetext[2]{C ist ein Koppel- oder Bypass-Kondensator}
+			\footnotetext[3]{weil $r_{Quelle} = 0\Omega$}
+			\footnotetext[4]{weil $r_{Quelle} = \infty\Omega$}
+			\footnotetext[5]{weil $r_{DC} = 0\Omega$}
+			\footnotetext[6]{weil $r_{AC} = \infty\Omega$}
+			
+			
 			\begin{minipage}{18cm}
             \includegraphics[width=18cm]{./bilder/dc-kleinsignal-ersatz.png}
             \end{minipage}
