@@ -3,4 +3,5 @@
 *.log
 Elo1.pdf
 *.out
-*.synctex
+*.synctex*
+*.sublime-workspace
