@@ -1,4 +1,3 @@
-
 *.aux
 *.log
 Elo1.pdf
@@ -6,4 +5,3 @@ Elo1.pdf
 *.synctex*
 *.sublime-workspace
 *.DS_STORE
-header
