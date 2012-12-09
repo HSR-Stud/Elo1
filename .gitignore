@@ -5,3 +5,4 @@ Elo1.pdf
 *.out
 *.synctex*
 *.sublime-workspace
+*.DS_STORE
