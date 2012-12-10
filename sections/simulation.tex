@@ -1,4 +1,37 @@
 \section{Simulation}
+	\subsection{Netzliste}
+			\begin{tabular}{l l}
+				{\bf Generelle Syntax}\\
+				$.xyz$ & Kommando \\
+				$+xyz$ & Weiterführung der letzten Zeile \\
+				$xyz$ & Bauteile\\
+			\end{tabular}
+			\begin{tabular}{l l}
+				{\bf Bauteile}\\
+				Passives Bauteil & $Rxx/Cxx/Lxx$,$n_1$,$n_2$,Wert \\
+				Diode & $Dxx$,$n_{Anode}$,$n_{Kathode}$,Modell \\
+				Transistor & $Qxx$,$n_{c}$,$n_{b}$,$n_{e}$,Modell \\
+				MOS-FET & $Mxx$,$n_{d}$,$n_{g}$,$n_{s}$,$n_{b}$,Modell \\
+				J-FET & $n_{d}$,$n_{g}$,$n_{s}$,Modell\\
+				Spannungsquelle & $Vxx$, $[...]$\\
+				Stromquelle & $Ixx$, $[...]$\\
+			\end{tabular} \\
+			\begin{tabular}{l l }
+				{\bf Quellen}\\
+				DC-Quelle & $Vxx/Ixx \; n^+ \; n^- \; [DC] \; V$ \\
+				AC-Quelle & $Vxx/Ixx \; n^+ \; n^- \; AC \; V \: \phi$ \\
+				Sinusquelle & $Vxx/Ixx \; n^+ \; n- \; SIN \; (V_0 \; V_A \; [f \; [t_d \; [\theta \; [\phi]]]]$ ($\theta$ erzeugt exp. abfallenden Sinus) \\
+				Pulsquelle	& $Vxx/Ixx \; n^+ \; n^- \;  PULSE \; V_0 \; V_{pulse} \; t_{delay} \; t_{rise} \; t_{fall} \; t_{pw} \; t_{per}$\\
+				Piece-Wise-Linear & $Vxx/Ixx \; n^+ \; n^- \; PWL \; t_1 \; V_1 \: ... \; t_n \; V_n$\\
+			\end{tabular}\\
+			\begin{tabular}{l l}
+			{\bf Kommandos}\\
+				$.LIB \: [path/] \: <filename>$ & Files, die Modelle u/o Subcircuits enthalten. \\
+				$.INC \: [path/] \: <filename>$ & Files, die eingebunden werden müssen. \\ 
+				$.PARAM \: name=value$ & Definition von globalen Parametern \\
+				$.TEMP \: 27$ & Simulationstemperatur (nominal: $27 ^{\circ}\mathrm{C}$ \\
+				$.OPTION$ & Verschiedene Optionen\\
+			\end{tabular}
 	\subsection{Simulationsarten}
 	\begin{multicols}{2}
 			{\bf DC-Analyse}
@@ -7,6 +40,7 @@
 				\item Verhalten bei zeitlich konstanten Eingangsstimuli
 				\item Kondensatoren sind offen, Spulen Kurzschlüsse
 				\item Optimalerweise von jedem Knoten einen DC-Pfad zum Nullknoten
+				\item $.DC \; src \; V_{start} \; V_{stop} \; V_{incr}$
 			\end{itemize}
 			{\bf AC-Analyse}
 			\begin{itemize}
@@ -15,6 +49,7 @@
 				\item Bei einem festen DC-Arbeitspunkt
 				\item Nichtlineare Funktionen werden im Arbeitspunkt linearisiert
 				\item Für Frequenzgänge
+				\item $.AC \; typ \; n_d \; f_{start} \; f_{stop}$ (Typ: Lin, Oct, Dec)
 			\end{itemize}
 	\columnbreak
 			{\bf Transienten-Analyse}
@@ -23,5 +58,6 @@
 				\item Verhalten bei beliebigen zeitlichen Eingangsstimuli
 				\item lineares und nichtlineares Verhalten
 				\item Bsp: Simulation des Einschwingverhaltens von Filtern
+				\item $.Tran \; t_{step} \; t_{stop} \; [t_{start}] \; [t_{step_{ceiling}}]$
 			\end{itemize}
 	\end{multicols}
