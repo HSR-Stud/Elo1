@@ -60,4 +60,14 @@
 				\item Bsp: Simulation des Einschwingverhaltens von Filtern
 				\item $.Tran \; t_{step} \; t_{stop} \; [t_{start}] \; [t_{step_{ceiling}}]$
 			\end{itemize}
+			{\bf Konvergenzprobleme} \\
+			.. treten auf, wenn keine Lösungen für die Gleichungssysteme gefunden werden.\\
+			Mögliche Ursachen: \\
+			\begin{itemize}
+				\item Mehrere Arbeitspunkte möglich
+				\item Fehlende DC-Pfade zum Nullknoten (bzw. nur Kapazitiv)
+				\item Sehr grosse Verstärkung
+				\item Grosse Wertebereiche (z.B. $m \Omega$ - $G \Omega$
+				\item Zu schnelle Flanken
+			\end{itemize}
 	\end{multicols}
