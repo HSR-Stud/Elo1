@@ -2,5 +2,4 @@
 
 ## Erlaubte Hilfsmittel
  * Taschenrechner
- * 8 A4-Blätter (16 Seiten) Zusammenfassung
-(nach Modulprüfung 2010)
+ * 5 A4-BlÃ¤tter (10 Seiten) - Stand 2012
