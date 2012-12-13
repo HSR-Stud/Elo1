@@ -1,4 +1,9 @@
 \section{Operationsverstärker}
+	\subsection{Die goldenen Regeln des Operationsverstärkers}
+	\begin{center}\framebox[135mm][c]{\begin{minipage}{13cm} \begin{center}
+		Der Eingangsstrom ist immer $0$! \\
+		Der Ausgang wird immer so geregelt, dass die Eingänge das gleiche Potential haben!
+		\end{center}\end{minipage} }\end{center} \par
 	\subsection{Opamp Schaltungen}
 		\subsubsection{Invertierender Verstärker}
 			Beim invertierenden Verstärker ist die Ausgangsspannung gegenphasig
@@ -14,13 +19,17 @@
        	$r_{out}=0\Omega$\\
        	Eingangswiderstand des I-Verstärkers: & 
        	$r_{in}=R_1$\\
+       	OP mit Offset: & \begin{tabular}{l l}
+       		$v_{out}$ &$=  \frac{R_1+R_F}{R_1} \cdot (v_0+v_d)$ \\
+       		& $-\frac{R_F}{R_1} \cdot v_{in}$
+       		\end{tabular}
        	\end{tabular}
       \end{minipage}
 			\begin{minipage}{6cm}
        	\includegraphics[width=6cm]{./images/i-verstaerker.png}
       \end{minipage}\\
       
-		\subsubsection{Nichtinvertierender Verstärker}
+	\subsubsection{Nichtinvertierender Verstärker}
 			Beim nichtinvertierenden Verstärker ist die Ausgangsspannung
       gleichphasig zur Eingangsspannung.\\ 
 			\begin{minipage}[T]{12cm}
@@ -35,7 +44,12 @@
           $r_{out}=0\Omega$\\
           Eingangswiderstand des NI-Verstärkers: &
           $r_{in}=\infty$\\
+          OP mit Offset: &
+          $v_{out} \cong \frac{R_1+R_F}{R_1} \cdot (v_{in}-v_{offset})$\\
         \end{tabular}
+        Für $R_1 \to \infty$ und $R_F \to 0$ wird der Operationsverstärker zu einem
+        Buffer.
+            	
       \end{minipage}
 			\begin{minipage}{6cm}
       	\includegraphics[width=6cm]{./images/ni-verstaerker.png}
@@ -91,27 +105,123 @@
           	\includegraphics[width=6cm]{./images/mehrfach-addierer-subtrahierer.png} 
         \end{minipage}\\
 
-		\subsubsection{Instrumentenverstärker}
-		\begin{minipage}[b]{12cm}
-		$A_{diff}=\frac{V_{out}}{V_{diff}}=\frac{V_{P}-V_{N}}{V_{inP}-V_{inN}}
-		=\frac{2R_{1}+P}{P}=\frac{2R_{1}}{P}+1$\\
-		\end{minipage}
-		\begin{minipage}{6cm}
-          	\includegraphics[width=6cm]{./images/Instrumentationsverstaerker.png} 
-        \end{minipage}\\
-
 		\subsubsection{Differenzverstärker}
 			\begin{minipage}[b]{12cm}
-            	$A_{diff}=\frac{v_{out}}{(v_{in2}-v_{in1})}$\\
+				Generell: \\
+				$v_{out} = \frac{R_1+R_F}{R_1} \cdot (\frac{R_2}{R_2+R_3} \cdot v_{ref} + 
+				\frac{R_3}{R_2+R_3} \cdot v_{in2}) - \frac{R_F}{R_1} \cdot v_{in1} $ 
+				\bigskip \\
+				Für $\frac{R_F}{R_1}=\frac{R_3}{R_2}$ und $v_{ref}=0V$:
+				\smallskip \\
+            	$A_{diff}=\frac{v_{out}}{(v_{in2}-v_{in1})}=\frac{R_F}{R_1}$\\
             	$v_{out} = \frac{R_F}{R_1}\cdot (v_{in2}-v_{in1})$\\
-            	Widerstandsbedingung für den Differenzverstärker\\
-            	$A_{diff}=\frac{R_F}{R_1}=\frac{R_3}{R_2}$\\
             \end{minipage}
-			\begin{minipage}{6cm}
+			\begin{minipage}[c]{6cm}
             	\includegraphics[width=6cm]{./images/differenzver.png}
             \end{minipage}\\
 
+		\subsubsection{Instrumentenverstärker}
+			\begin{minipage}[b]{12cm}
+			1. Stufe: Invertierender Verstärker \\
+			$\Delta V_{opo}=V_{opo1}-V_{opo2}=(1+\frac{R_{F1}+R_{F2}}{R_G})\cdot(V_{in2}-V_{in1})$
+			\smallskip \\
+			2. Stufe: Differenzverstärker (Bedingung: $\frac{R_4}{R_3}=\frac{R_2}{R_1}$)\\
+			$V_{out}=V_{ref}+\frac{R_4}{R_3}\cdot(1+\frac{R_{F1}+R_{F2}}{R_G})\cdot(V_{in2}-V_{in1})$
+			\bigskip \\
+			- zur Verstärkung sehr kleiner Differenzspannungen (z.B. Brückensensoren) \\
+			- Oft als fertige Bauteile mit externem $R_G$ und Verstärkungen bis $1000$. \\
+			\end{minipage}
+			\begin{minipage}[t]{6cm}
+          		\includegraphics[width=6cm]{./images/instramp.png} 
+       	 	\end{minipage}\\
+       	 	
+       	 \subsubsection{T-Glied in Rückkopplung}
+       	 \begin{minipage}[b]{12cm}
+       	 	Für $A \to \infty$ (idealer OP) gilt: \smallskip \\
+       	 	$v_u=-\frac{R_2 \cdot R_3 + R_2 \cdot R_4 + R_3 \cdot R_4}{R_1 \cdot R_3}$
+       	 	\bigskip \\
+       	 	$\Longrightarrow$ hohe Verstärkung mit kleinen Wertunterschieden - 
+       	 	z.B.$R_1=R_3=1k\Omega$ und $R_2=R_4=10k\Omega$ ergibt $v_u=-120$ 
+       	 	(Vergleich: $v_u=-10$ bei inv. Verstärker) \\
+       	 \end{minipage}
+       	 \begin{minipage}[t]{6cm}
+       	 	\includegraphics[width=6cm]{./images/tglied.png}
+       	 \end{minipage}
+       	 
+       	 \subsubsection{Negative Impedance Converter}
+       	 \begin{minipage}[b]{12cm}
+       	 	Der Negative Impedance Converter (NIC) stellt einen negativen reellen Widerstand
+       	 	dar. Verwendung: Kompensation parasitärer reeller Widerstände. \\
+       	 	Nachteil: Masse-Bezug des negativen Widerstands. \bigskip \\
+       	 	$R_{EQ}=-R \cdot \frac{R_1}{R_2}$\\
+       	 \end{minipage}
+       	 \begin{minipage}[t]{6cm}
+       	 	\includegraphics[width=6cm]{./images/neg-imp-conv.png}
+       	 \end{minipage}
+            
+        \subsubsection{Differentiator}
+			\begin{minipage}[b]{12cm}
+           		Beim Differentiator gilt: \\ 
+           		$v_{out}=v_N-i_1 \cdot R_F$, wobei $v_N=0$ und $i_1=C_1 \cdot \frac{dv_C}{dt}$\\
+           		Somit folgt:\\
+           		$v_{out}=-R_FC_1 \frac{dv_{in}}{dt}$\\
+           		
+           		Die Elemente $C_F$ und $R_1$ sind nicht nötig, doch sie beheben eine\\
+           		eine Reihe Probleme des elementaren Differentiators und fügen eine \\
+           		{\bf Bandpass}-Charakteristik ein. \\
+           		- Weniger Schwingneigung \\
+           		- Höherer Eingangswiderstand \\
+           		$\omega_1 = \frac{1}{R_1 \cdot C_1}$\\
+           		$\omega_2 = \frac{1}{R_F \cdot C_F}$\\      
+           	\end{minipage}
+			\begin{minipage}[t]{6cm}
+           		\includegraphics[width=6cm]{./images/differentiator.png}
+           	\end{minipage}
 
+		\subsubsection{Integrator} 
+		\vspace{1cm}
+		\begin{minipage}[b]{12cm}
+		$v_{out}=-\frac{1}{C} \int{i_C}dt + v_0$
+		$v_{out}=-\frac{1}{RC} \int{v_{in}}dt +
+		v_0 $\\
+		$\frac{dv_{out}}{dt}=-\frac{v_{in}}{RC}$\\
+		Der Widerstand $R_F$ erzeugt eine {\bf Tiefpass}-Charakteristik. \\
+		Ein "Reset"-Schalter über $C$ kann Verhindern, dass der Integrator an\\
+		den Anschlag läuft.
+		\end{minipage} 
+		\begin{minipage}[c]{6cm}
+          	\includegraphics[width=6cm]{./images/integrator.png} 
+        \end{minipage}\\
+        
+        \subsubsection{Gesteuerte Quellen}
+			\begin{tabular}{|c|c|c|}
+				\hline
+				\multirow{2}{*}{Steuergrösse} & \multicolumn{2}{c|}{Ausgangsgrösse}\\ \cline{2-3}
+				& V & I \\ \hline
+				\multirow{8}{*}{V}	& Spannungsgesteuerte Spannungsquelle	& Spannungsgesteuerte Stromquelle		\\
+									& \bf{VCVS}								& \bf{VCCS}								\\
+									& Voltage Controlled Voltage Source		& Voltage Controlled Current Source		\\ \cline{2-3}
+									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/vcvs.png}	
+									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/vccs.png}					\\ \cline{2-3}
+									& $v_{out}=v_{in} \cdot A_v$			& $i_{out} = v_{in} \cdot g_m$			\\
+									& $A_v$: Spannungsverstärkung			& $g_m$: Transkonduktanz				\\ \cline{2-3}
+									& Normaler OP-Amp Verstärker
+									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/vccs_schaltung.png}		\\
+									&	& $I_2=\frac{V_1}{R_1}$ bzw. $I_2=-\frac{V_1}{R_1}$							\\ 	\hline	
+				\multirow{8}{*}{I}	& Stromgesteuerte Spannungsquelle		& Stromgesteuerte Stromquelle			\\
+									& \bf{CCVS}								& \bf{CCCS}								\\
+									& Current Controlled Voltage Source		& Current Controlled Current Source		\\ \cline{2-3}
+									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/ccvs.png}	
+									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/cccs.png}					\\ \cline{2-3}
+									& $v_{out}=i_{in} \cdot r_m$			& $i_{out} = i_{in \cdot A_i}$			\\
+									& $r_m$: Transimpedanz					& $A_i$: Stromverstärkung				\\ \cline{2-3}
+									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/tia.png}
+									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/cccs-schaltung.png}		\\ 
+									& $v_{out}=-i_{in} \cdot r_F$			& $A_i=\frac{I_2}{I_1}=\frac{R_1}{R_2}$	\\ \hline
+									
+				
+			\end{tabular} \\	
+			
 		\subsubsection{Komparatorschaltung}
 			\begin{minipage}{18cm}
             	Wenn ein Operationsverstärker als {\it Verstärker ohne
@@ -120,19 +230,15 @@
             	Komparator} betrieben.\\
             	\includegraphics[width=16cm]{./images/komparator.png}\\
             	Beim nichtinvertierenden Komparator (links)\\
-            	$V_{out}=V_{out\hspace{1mm}max}=V_{pos}-V_{Rand}
-            	\mbox{ wenn } V_{in} > V_{ref}\pm V_{OS} \mbox{ bzw. } 
-            	V_{diff}\pm V_{OS}>0$\\
-            	$V_{out}=V_{out\hspace{1mm}min}=V_{neg}+V_{Rand}
-            	\mbox{ wenn } V_{in} < V_{ref}\pm V_{OS} \mbox{ bzw. } 
-            	V_{diff}\pm V_{OS}<0$\\ \\
-            	Beim invertierenden Komparator (rechts)\\
-            	$V_{out}=V_{out\hspace{1mm}max}=V_{pos}-V_{Rand}
-            	\mbox{ wenn } V_{in} < V_{ref}\pm V_{OS} \mbox{ bzw. } 
-            	V_{diff}\pm V_{OS}<0$\\
-            	$V_{out}=V_{out\hspace{1mm}min}=V_{neg}+V_{Rand}
-            	\mbox{ wenn } V_{in} > V_{ref}\pm V_{OS} \mbox{ bzw. } 
-            	V_{diff}\pm V_{OS}>0$\\
+            	\begin{tabular}{|l|l|l|} \hline
+            		Bedingung & Nichtinvertierend & invertierend \\ \hline
+            		$V_{in} > V_{ref} \pm V_{os}$	
+            		& $V_{out} = V_{out_{max}} = V_{pos}-V_{rail}$ 
+            		& $V_{out} = V_{out_{min}} = V_{neg}+V_{rail}$\\ \hline
+            		$V_{in} < V_{ref} \pm V_{os}$
+            		& $V_{out} = V_{out_{min}} = V_{neg}+V_{rail}$ 
+            		& $V_{out} = V_{out_{max}} = V_{pos}-V_{rail}$ \\ \hline
+            	\end{tabular}
             \end{minipage}
 
 		\subsubsection{Schmitt-Trigger}
@@ -185,36 +291,7 @@
             \end{tabular}\\
             \end{minipage}
 	
-		\subsubsection{Differentiator}
-			\begin{minipage}[b]{12cm}
-           		Beim Differentiator gilt $v_{out}=v_N-i_1 \cdot R_F$ wobei
-           		$v_N=0$\\
-           		$i_1=C_1 \cdot \frac{dv_C}{dt}$\\
-           		$v_{out}=-R_FC_1 \frac{dv_{in}}{dt}$\\
-           		Die Elemente $C_F$ und $R_1$ sind optional. \\
-           		Sie beheben jedoch Probleme die ohne \\
-           		sie entstehen (siehe elemenarer Differentieator). \\
-           		Mit $C_F$ und $R_1$: \\
-           		- Keine differentiation bei hoeheren Frequenzen. \\
-           		- Limitierte Verstaerkuing bei hoeheren Frequenzen. \\
-           		- Eingangswiderstand immer groesser $R_1$ \\ 
-           		$\rightarrow$ keine Belastung der Signalquelle
-           
-           	\end{minipage}
-			\begin{minipage}{6cm}
-           		\includegraphics[width=6cm]{./images/differentiator.png}
-           	\end{minipage}
 
-		\subsubsection{Integrator} 
-		\vspace{1cm}
-		\begin{minipage}[b]{12cm}
-		$v_{out}=-\frac{1}{RC} \int{v_{in}}dt +
-		v_{out\hspace{1mm}Anfang} $\\
-		$\frac{dv_{out}}{dt}=-\frac{v_{in}}{RC}$\\
-		\end{minipage} 
-		\begin{minipage}{6cm}
-          	\includegraphics[width=6cm]{./images/integrator.png} 
-        \end{minipage}\\
 
 	\subsection{Fehlereinflüsse des Opamp}
 		\subsubsection{Verstärkungsfehler bei endlicher Closed-Loop-Verstärkung}
@@ -242,6 +319,7 @@
           $V_{out \hspace{1mm}E}=V_{OS} \cdot {A_{CL}}^{+}$\\
           Im Open-Loop-Betrieb ist die Ausgangs-Fehlerspannung: &
           $V_{out \hspace{1mm}E}=V_{OS}\cdot {A_{CL}}^{+}$\\
+          Typische Offsetspannung: & $V_{OS} \approx 0.5 \dots 5 \; mV$
          \end{tabular}
 		
 		\subsubsection{Eingangsstromfehler}
@@ -258,6 +336,7 @@
               $V_{out \hspace{1mm}E}=I_N R_F-R_2 I_P\left( 1+\frac{R_F}{R_1} \right)$\\
               Widerstandsbedingung für Eingangsstromkompensation:&
               $R_2=\frac{R_F R_1}{R_F+R_1}=R_F // R_1$\\
+              Typischer Eingangsstromfehler: & $I_E=\frac{I_P+I_N}{2}\approx 20 \dots 200 \; nA$ \\
             	\end{tabular}
             \end{minipage}\\
 			\includegraphics[width=8cm]{./images/eingangsstromfehler.png}
@@ -290,6 +369,18 @@
 				\fbox{$V_{out \hspace{1mm}E}=\left|I_{OS}\right| \cdot R_F$}\\
 			\end{minipage}
 
+		\subsubsection{Power Supply Rejection Ratio PSRR}
+		Schwankungen der Speisespannungen können zu Offset am Ausgang führen.
+		Der PSRR beschreibt Unterdrückung solcher Beeinflussungen. \bigskip \\
+		$PSRR_{lin}=\frac{dV_{supply}}{dV_{os}}$ \bigskip \\
+		Meist kein Problem dank Stützkondensatoren. 
+		Allenfalls Probleme bei hohen Frequenzen.
+		
+		\subsection{Common Mode Rejection Ratio CMRR}
+		Schwankungen der Eingangsspannungen können am Ausgang einen Offset verursachen. \bigskip \\
+		$CMRR_{lin}=\frac{dV_{CM}}{dV_{os}}$ mit $V_{CM}=V_{opp}=V_{opn}$ \bigskip \\
+		Bei invertierenden Verstärkern irrelevant, da $V_{opn}=\text{konst}=V_{AGND}$.
+
 		\subsubsection{Zusammenfassung aller Fehlereinflüsse}
       $V_{out\hspace{1mm}E\hspace{1mm}total}=A_{CL+}\cdot\left[\left|V_{OS}\right|+\frac{\left|V_{CM}\right|}{CMRR}
             	+\frac{\left|\Delta V_{Supply}\right|}{PSRR}\right]+\left|I_{OS}\right|R_F$\\
@@ -317,6 +408,7 @@
 				$SR\geq\frac{0.8V_{step}}{t_{anstieg}}$\\ 
 				min. SR bei einem Sinussignal & 
 				$SR\geq V_{amplitude}\omega=V_{amplitude}2\pi f$\\
+				typische Slew-Rate: & $SR \approx 0.5 \dots 50 \frac{V}{\mu s}$
 			\end{tabular}
 
 			\includegraphics[height=5cm]{./images/slew-rate.png}\\
