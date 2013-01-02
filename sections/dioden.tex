@@ -51,12 +51,35 @@
 			steilen Dotierungsverlauf. 
 			
 		\subsubsection{Zener-Diode}
-		\begin{tabular}{l l}
-			\multirow{5}{*}{
-			\includegraphics[width=6cm]{./images/zdiode-kennlinie.png}} & \\
-			& Anstieg der Durchbruchkennlinie bei spezieller Dotierung \\
-			& Anwendung: Spannungsbegrenzung und -stabilisierung \\ & \\ & \\
-		\end{tabular} \\ 
-		
+			\begin{minipage}[c]{6cm}
+				\includegraphics[width=6cm]{./images/zdiode-kennlinie.png}
+			\end{minipage}
+			\begin{minipage}[t]{12cm}
+				Anstieg der Durchbruchkennlinie bei spezieller Dotierung \\
+				Anwendung: Spannungsbegrenzung und -stabilisierung  \\
+				\\
+				Temperaturkoeffizient abhängig von Zenerspannung. $~0$ bei $5.6V$ -
+				darüber: negativer Temperaturkoeffizient\\
+			\end{minipage} \\
+			
 		\subsubsection{Schottky-Diode}
-			ToDo!
+			Anstatt der p-Zone hat die Schottky-Diode eine Metall-Zone. Weil vom Metall
+			keine Löcher in den Halbleiter diffundieren, gibt es keine Diffusionskapazität
+			und die Diode bekommt ein sehr schnelles Schaltverhalten und eine kleine
+			Durchflussspannung $U_{F0} \approx 0,3V$. \\
+			
+		\subsubsection{Leuchtdiode}
+			Leuchtdioden werden aus verschiedenen Substraten (Halbleitern) hergestellt,
+			z.B. GaAs (Gallium-Arsenid), InGaN (Indium-Gallium-Nitrid) um verschiedene
+			Farben (Wellenlängen) zu produzieren. Typisch sind: \\
+			\begin{tabular}{|l|l|l|c|} \hline
+				infrarot & $900nm$ & GaAs & $1,0-1,5V$ \\ \hline
+				rot & $635nm$ & GaAsP & $1,6-2.2V$ \\ \hline
+				grün & $565nm$ & GaP & $2,0-2,4V$ \\ \hline
+				blau & $490nm$ & InGaN & $3,2-4,0V$ \\ \hline
+			\end{tabular}\\
+			
+		\subsubsection{Photodiode}
+			Photodioden werden in Sperr-Richtung angeschlossen. Der Sperrstrom erhöht sich
+			bei Lichteinfall. Meistens werden Photodioden mit einen OP-Verstärker (als
+			Transimpedanzverstärker) benutzt. \\
