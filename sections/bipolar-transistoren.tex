@@ -134,4 +134,28 @@
 		\end{minipage} \\
 		
 	\subsection{Transistor als Schalter}
+		\begin{minipage}[c]{12cm}
+			Der Transistorschalter besitzt zwei stationäre Arbeitspunkte: \\
+			
+			\textbf{AP1:} Arbeitspunkt EIN, hoher Stromfluss, Transistor übersteuert. \\
+			Sättigungsspannung: $U_{CE_{sat}} \approx 100mV$ \\
+			Übersteuerungsgrad: $m = \frac{B_N \cdot I_{B_1}}{I_{C_1}}$ mit
+			$I_{B_1}=\frac{U_{E_1}-U_{BE_1}}{R_B}$ und $U_{C_1}=\frac{U_{0_C}-U_{CE_1}}{R_C}$ \\
+			
+			\textbf{AP2:} Arbeitspunkt AUS, kein Stromfluss, Transistor gesperrt. \\
+			$I_B = 0$, $I_C = 0$, $U_{out} = U_{0_C}$
+		\end{minipage}
+		\begin{minipage}[c]{5cm}
+			\includegraphics[width=5cm]{images/bip-schalter-ap}
+		\end{minipage} \\
 		
+		\subsubsection{Dynamisches Verhalten}
+		Das zeitliche Verhalten bei Schaltvorgängen wird in erster Linie durch die
+		Transistorkapazitäten bestimmt. Beim Einschaltvorgang tritt zuerst eine
+		Einschaltverzögerung $t_d$ auf (bis $I_C$ überhaupt reagiert), dann dauert es
+		eine Anstiegszeit $t_a$ bis der Strom $I_C$ erreicht ist. Beim Ausschaltvorgang
+		passiert eine Speicherzeit $t_s$ lang nichts, dann braucht es eine Abfallzeit $t_f$
+		bis der Strom $I_C=0$ wird.  \\
+		Zur Reduktion der Speicherzeit $t_s$ kann eine Schottkydiode von der Basis zum 
+		Kollektor geschalten werden. Somit wird $U_{BC}$ limitiert und die Ladung verkleinert.
+		Diese Methode wurde in der 74S- und der 74LS-Familie eingesetzt.
