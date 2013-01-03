@@ -1,6 +1,4 @@
 \section{Transitoren}
-	\subsection{Transistortypen}
-	\includegraphics[width=11cm]{images/Transistortypen.png}
 
 \subsection{Bipolartransistoren}
 	\begin{minipage}[c]{6cm}
@@ -42,33 +40,38 @@
 			$C_N=\frac{I_E}{I_B}=\frac{1}{1-A_N}$ \\
 		\end{minipage}
 	\end{multicols}
+	
 	\subsubsection{Ebers-Moll-Modell}
-		\begin{minipage}[c]{4cm}
-			\includegraphics[width=4cm]{images/bipolar-EbersMoll}
+		\begin{minipage}[c]{6cm}
+			\includegraphics[width=5.2cm]{images/bipolar-EbersMoll}
 		\end{minipage}
-		\begin{minipage}[c]{8cm}
-			$I_C=A_NI_{E_{sat}}(e^{\frac{U_{BE}}{U_T}}-1)
-			 -I_{C_{sat}}(e^{\frac{U_{BC}}{U_T}}-1)$ \\
-			$I_E=I_{E_{sat}}(e^{\frac{U_{BE}}{U_T}}-1)
-			 -A_II_{C_{sat}}(e^{\frac{U_{BC}}{U_T}}-1)$ \\
-			$I_B=I_E-I_C$ \\
+		\begin{minipage}[c]{8cm} 
+			\begin{tabular}{l l}
+			Kollektorstrom: & \fbox{$I_C=A_NI_{E_{sat}}\left(e^{\frac{U_{BE}}{U_T}}-1\right)
+			 -I_{C_{sat}}\left(e^{\frac{U_{BC}}{U_T}}-1\right)$ }\\
+			Emitterstrom: & \rule{0pt}{6ex}\fbox{$I_E=I_{E_{sat}}\left(e^{\frac{U_{BE}}{U_T}}-1\right)
+			 -A_II_{C_{sat}}\left(e^{\frac{U_{BC}}{U_T}}-1\right)$} \\
+			Basisstrom: & \rule{0pt}{4ex}\fbox{$I_B=I_E-I_C$} \\
+			\end{tabular} 
 		\end{minipage}
 	
 	\subsubsection{Kennlinien \& Formeln}
-		\begin{minipage}[c]{4cm}
-			\includegraphics[width=4cm]{images/bipolarEingangsKennlinie}
-		\end{minipage}
+		\begin{minipage}[c]{12cm}
+			{\bf Ausgangskennlinie (I)}\\
+				typ.: $U_{CE_{sat}}=0.3V$ und Ausgangswiderstand $r_{CE} \approx \frac{U_{Early}}{I_{C0}}$\\
+				\hspace{2mm}
+			{\bf Stromübertragungskennlinie (II)}\\
+				Kollektorstrom: $B_N \cdot I_B + I_{CE0} \approx B_N \cdot I_B$\\
+				\hspace{2mm}	
+			{\bf Eingangskennlinie (III)}\\
+				Basisstrom: \smash{$I_B = I_{B_{sat}} \cdot (e^{\frac{U_{BE}}{U_T}}-1)$}\\
+				Kleinsignalwiderstand: $r_{BE} = \frac{m\cdot V_T}{I_{B0}}$ mit $I_{B0}$: Arbeitspunktstrom\\
+				\hspace{2mm}
+			{\bf Spannungsrückwirkungskennlinie (IV)}\\
+				$U_{BE} = \eta \cdot U_{CE}$ mit $\eta \approx 0.1 \%$ (kann meist vernachlässigt werden!)\\
+        \end{minipage}	
 		\begin{minipage}[c]{5cm}
-			\includegraphics[width=5cm]{images/bipolarAusgangsKennlinie}\\
-		\end{minipage}
-		\begin{minipage}[c]{8cm}
-			links: Eingangskennlinie - rechts: Ausgangskennlinie \\
-			\\
-			Kleinsignal-Widerstand: $r_{BE} = \frac{\delta V_{BE}}{\delta I_B} $ \\
-			Basisstrom: $I_B=I_{B_{sat}}(e^{\frac{U_{BE}}{U_T}}-1)
-						\approx I_{B_{sat}} e^{\frac{U_{BE}}{U_T}}$ \\
-			Kollektorstrom: $I_C = B_N I_B+I_{CE_{0}} \approx B_N I_B$ \\
-			
+			\includegraphics[width=5cm]{./images/BipTraKennlinien.png}
 		\end{minipage}
 	
 	\subsubsection{Early-Effekt}
@@ -84,6 +87,7 @@
 			$I_C = (B_NI_B+I_{CE_0})(1+\frac{U_{CE}}{U_{EA}}$
 		\end{minipage}
 		
+\newpage		
 	\subsubsection{Temperaturverhalten}
 		Die maximale Leistung $P_V$ des Transistors muss stets kleiner als 
 		$U_{CE} \cdot I_C$ sein. (Näherung) \\
@@ -120,8 +124,8 @@
 		Kleinsignalmodell ohne Rückwirkung: $\eta \cdot U_{CE}$ wird weggelassen, weil 
 		$\eta \approx 0$. Somit gilt: \\
 		\begin{center}
-			$\boxed{U_{BE} = r_{BE} \cdot I_B}$ \hspace{1cm} und \hspace{1cm}
-			$\boxed{I_C = b \cdot I_B + \frac{1}{r_{CE}} \cdot U_{CE}}$ \\
+			\fbox{$U_{BE} = r_{BE} \cdot I_B$} \hspace{1cm} und \hspace{1cm}
+			\fbox{$I_C = b \cdot I_B + \frac{1}{r_{CE}} \cdot U_{CE}$} \\
 		\end{center}
 		
 		Somit gilt für die \textbf{Emitterschaltung}: \\
@@ -158,4 +162,72 @@
 		bis der Strom $I_C=0$ wird.  \\
 		Zur Reduktion der Speicherzeit $t_s$ kann eine Schottkydiode von der Basis zum 
 		Kollektor geschalten werden. Somit wird $U_{BC}$ limitiert und die Ladung verkleinert.
-		Diese Methode wurde in der 74S- und der 74LS-Familie eingesetzt.
+		Diese Methode wurde in der 74S- und der 74LS-Familie eingesetzt. \\
+\newpage		
+        \subsubsection{Gegenkopplung}
+        Motivation: Durch Gegenkopplung wird die Verstärkung des Transistors kleiner, doch
+        Bauteiltoleranzen, Temperaturschwankungen und Verzerrungen werden minimiert. \\
+            \begin{minipage}[T]{5.5cm}
+                \includegraphics[height=3cm]{./images/Spannungsgegenkopplung.png}
+            \end{minipage}
+            \begin{minipage}[T]{5.5cm}
+                \includegraphics[height=3cm]{./images/Stromgegenkopplung.png}
+            \end{minipage} \\
+            \begin{minipage}[T]{5.5cm}
+                Gegenkopplung durch $R_2$
+            \end{minipage}
+            \begin{minipage}[T]{5.5cm}
+                Gegenkopplung durch $R_4$\\
+                $V_{out} = -\frac{R_3}{R_4}\cdot V_{in}$\\
+            \end{minipage}
+            
+        \subsubsection{Transistorverstärkerschaltungen}
+            \begin{minipage}[T]{4.7cm}
+                Emitterschaltung mit\\
+                Stromgegenkopplung\\
+                \includegraphics[height=3cm]{./images/BipTraEmitterschStGk.png}
+            \end{minipage}
+            \begin{minipage}[T]{4.7cm}
+                Emitterschaltung mit\\
+                Spannungsgegenkopplung\\
+                \includegraphics[height=3cm]{./images/BipTraEmitterschSpGk.png}
+            \end{minipage}
+            \begin{minipage}[T]{5.7cm}
+                Basisschaltung\\\\
+                \includegraphics[height=3cm]{./images/BipTraBasissch.png}
+            \end{minipage}
+            \begin{minipage}[T]{3.7cm}
+                Kollektorschaltung\\\\
+                \includegraphics[height=3cm]{./images/BipTraKollektorsch.png}
+            \end{minipage}
+         \subsubsection{Differenzverstärker}
+             \begin{minipage}[T]{12cm}
+                 Differenz-Verstärkung
+                 \hspace{8.4mm}\fbox{$v_d = \frac{U_{A_d}}{U_{E_d}} = -S\cdot R_C$} ; S = Steilheit\\
+                 Gleichtaktverstärkung
+                 \hspace{8.1mm}\fbox{$v_{gl} = -\frac{R_C}{2\cdot R_E}$}\\
+                 Gleichtaktunterdrückung
+                 \hspace{3.8mm}\fbox{$G = \frac{v_d}{v_{gl}} = 2\cdot S \cdot R_E$}
+             \end{minipage}
+             \begin{minipage}{4cm}
+                 \includegraphics[height=3cm]{./images/BipTraDiffAmp.png}
+             \end{minipage}\\
+             
+         \subsubsection{Leistungsendstufen}
+             \begin{minipage}[T]{4.7cm}
+                 Klasse A-Verstärker\\
+                 \includegraphics[height=4cm]{./images/KlassA_Amp.png}
+             \end{minipage}
+             \begin{minipage}[T]{4.7cm}
+                 Klasse B-Verst\"arker\\
+                 \includegraphics[height=4cm]{./images/KlassB_Amp.png}
+             \end{minipage}
+             \begin{minipage}[T]{4.7cm}
+                 Klasse AB-Verstärker\\
+                 \includegraphics[height=4cm]{./images/KlassAB_Amp.png}
+             \end{minipage}
+             \begin{minipage}[T]{4.7cm}
+                 Arbeitspunkte jeweiler Klassen\\\\
+                 \vspace{5mm}
+                 \includegraphics[width=4.7cm]{./images/EndstufenAP.png}
+             \end{minipage}		
