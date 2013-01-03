@@ -28,11 +28,11 @@
 			\begin{minipage}{6cm}
        	\includegraphics[width=6cm]{./images/i-verstaerker.png}
       \end{minipage}\\
-      
+\hrule      
 	\subsubsection{Nichtinvertierender Verstärker}
 			Beim nichtinvertierenden Verstärker ist die Ausgangsspannung
       gleichphasig zur Eingangsspannung.\\ 
-			\begin{minipage}[T]{12cm}
+	 \begin{minipage}[T]{12cm}
       	
         \begin{tabular}{ll}
         	Closed-Loop Gain: &
@@ -48,38 +48,37 @@
           $v_{out} \cong \frac{R_1+R_F}{R_1} \cdot (v_{in}-v_{offset})$\\
         \end{tabular}
         Für $R_1 \to \infty$ und $R_F \to 0$ wird der Operationsverstärker zu einem
-        Buffer.
-            	
+        Buffer.          	
       \end{minipage}
 			\begin{minipage}{6cm}
       	\includegraphics[width=6cm]{./images/ni-verstaerker.png}
       \end{minipage}\\
-
+\hrule
+		\begin{minipage}{12.5cm}
 		\subsubsection{Verstärker mit mehreren Eingängen}
-			\begin{minipage}{12.5cm}
             	$A_{CL1}=-\frac{R_F}{R_1}$\\
             	$A_{CL2}=-\frac{R_F}{R_2}$\\
             	$A_{CL3}=\frac{R_F+(R_1//R_2)}{(R_1//R_2)}$\\
             	$v_{out}=A_{CL1}v_1+A_{CL2}v_2+A_{CL3}v_3=
             	-\frac{R_F}{R_1}v_1-\frac{R_F}{R_2}v_2+\frac{R_F+(R_1//R_2)}{(R_1//R_2)}$\\
-      \end{minipage}
-			\begin{minipage}{5.5cm}
-      	\includegraphics[width=5.5cm]{./images/3-eingaenge.png}
-      \end{minipage}\\
-
+     	\end{minipage}
+		\begin{minipage}{6cm}
+      		\includegraphics[width=6cm]{./images/3-eingaenge.png}
+      	\end{minipage}\\
+\hrule
+		\begin{minipage}[c]{12cm}
 		\subsubsection{Invertierender Addierer}
-			\begin{minipage}[b]{12cm}
             $V_{out}=A_{CL1}V_{IN1}+A_{CL2}V_{IN2}+\ldots$\\
             $V_{out}=- \frac{R_F}{R_1}V_{IN1}- \frac{R_F}{R_2}V_{IN2}+\ldots$\\
             $A_{CL1}=- \frac{R_F}{R_1}$\\
            	$A_{CL2}=- \frac{R_F}{R_2}$\\
-      \end{minipage}
-			\begin{minipage}{6cm}
-      	\includegraphics[width=6cm]{./images/invertadd.png}
-      \end{minipage}\\
-
+      	\end{minipage}
+		\begin{minipage}{5cm}
+      		\includegraphics[width=5cm]{./images/invertadd.png}
+      	\end{minipage}\\
+\hrule
+		\begin{minipage}[c]{12cm}
 		\subsubsection{Gewichteter Subtrahierer}
-			\begin{minipage}[b]{12cm}
             	$A_{CL1}=- \frac{R_F}{R_1}$\\
             	$A_{CL2}=
            		\frac{R_3}{R_3+R_2}\left(1+\frac{R_F}{R_1}\right)$\\
@@ -87,26 +86,25 @@
             	\frac{R_3}{R_3+R_2}\left(1+\frac{R_F}{R_1}\right)
             	v_{in2}-\frac{R_F}{R_1}v_{in1}$\\
       	\end{minipage}
-			\begin{minipage}{6cm}
-            	\includegraphics[width=6cm]{./images/gewichtsub.png}
+			\begin{minipage}{5cm}
+            	\includegraphics[width=5cm]{./images/gewichtsub.png}
             \end{minipage}\\
 
-
-		\subsubsection{Mehrfach-Addierer-Subtrahierer} 		
 		\begin{minipage}[b]{12cm}
-		1. Man wählt $R_{F}$\\
-		2. Man wählt $R_{P}$, wobei oft $R_{P}=R_{F}$ gesetzt wird. (optional)\\
-		3. $R_{n}=\frac{R_{F}}{\left|A_{n}\right|}$ oder
-			$R_{n}=\frac{R_{P}}{\left|A_{n}\right|}$\\ 
-		4. Verstärkungsbedingung: $A_{N1} +
-		\ldots + A_{Nn} = A_{P1} + \ldots + A_{Pn}$ \\Falls unerfüllt, muss ein Dummyeingang hinzugefügt werden!
+		\subsubsection{Mehrfach-Addierer-Subtrahierer} 		
+			1. Man wählt $R_{F}$\\
+			2. Man wählt $R_{P}$, wobei oft $R_{P}=R_{F}$ gesetzt wird. (optional)\\
+			3. $R_{n}=\frac{R_{F}}{\left|A_{n}\right|}$ oder
+				$R_{n}=\frac{R_{P}}{\left|A_{n}\right|}$\\ 
+			4. Verstärkungsbedingung: $A_{N1} +
+			\ldots + A_{Nn} = A_{P1} + \ldots + A_{Pn}$ \\Falls unerfüllt, muss ein Dummyeingang hinzugefügt werden!
 		\end{minipage}
 		\begin{minipage}{6cm}
           	\includegraphics[width=6cm]{./images/mehrfach-addierer-subtrahierer.png} 
         \end{minipage}\\
-
+\hrule
+		\begin{minipage}[c]{12cm}
 		\subsubsection{Differenzverstärker}
-			\begin{minipage}[b]{12cm}
 				Generell: \\
 				$v_{out} = \frac{R_1+R_F}{R_1} \cdot (\frac{R_2}{R_2+R_3} \cdot v_{ref} + 
 				\frac{R_3}{R_2+R_3} \cdot v_{in2}) - \frac{R_F}{R_1} \cdot v_{in1} $ 
@@ -119,9 +117,9 @@
 			\begin{minipage}[c]{6cm}
             	\includegraphics[width=6cm]{./images/differenzver.png}
             \end{minipage}\\
-
+\hrule
+		\begin{minipage}[c]{12cm}
 		\subsubsection{Instrumentenverstärker}
-			\begin{minipage}[b]{12cm}
 			1. Stufe: Invertierender Verstärker \\
 			$\Delta V_{opo}=V_{opo1}-V_{opo2}=(1+\frac{R_{F1}+R_{F2}}{R_G})\cdot(V_{in2}-V_{in1})$
 			\smallskip \\
@@ -131,12 +129,12 @@
 			- zur Verstärkung sehr kleiner Differenzspannungen (z.B. Brückensensoren) \\
 			- Oft als fertige Bauteile mit externem $R_G$ und Verstärkungen bis $1000$. \\
 			\end{minipage}
-			\begin{minipage}[t]{6cm}
+			\begin{minipage}[c]{6cm}
           		\includegraphics[width=6cm]{./images/instramp.png} 
        	 	\end{minipage}\\
-       	 	
+\hrule      	 
+      	 \begin{minipage}[c]{12cm}	
        	 \subsubsection{T-Glied in Rückkopplung}
-       	 \begin{minipage}[b]{12cm}
        	 	Für $A \to \infty$ (idealer OP) gilt: \smallskip \\
        	 	$v_u=-\frac{R_2 \cdot R_3 + R_2 \cdot R_4 + R_3 \cdot R_4}{R_1 \cdot R_3}$
        	 	\bigskip \\
@@ -144,153 +142,141 @@
        	 	z.B.$R_1=R_3=1k\Omega$ und $R_2=R_4=10k\Omega$ ergibt $v_u=-120$ 
        	 	(Vergleich: $v_u=-10$ bei inv. Verstärker) \\
        	 \end{minipage}
-       	 \begin{minipage}[t]{6cm}
-       	 	\includegraphics[width=6cm]{./images/tglied.png}
+       	 \begin{minipage}[c]{5cm}
+       	 	\includegraphics[width=5cm]{./images/tglied.png}
        	 \end{minipage}
-       	 
+\hrule       	 
+       	 \begin{minipage}[c]{12cm}
        	 \subsubsection{Negative Impedance Converter}
-       	 \begin{minipage}[b]{12cm}
        	 	Der Negative Impedance Converter (NIC) stellt einen negativen reellen Widerstand
        	 	dar. Verwendung: Kompensation parasitärer reeller Widerstände. \\
        	 	Nachteil: Masse-Bezug des negativen Widerstands. \bigskip \\
        	 	$R_{EQ}=-R \cdot \frac{R_1}{R_2}$\\
        	 \end{minipage}
-       	 \begin{minipage}[t]{6cm}
-       	 	\includegraphics[width=6cm]{./images/neg-imp-conv.png}
+       	 \begin{minipage}[c]{5cm}
+       	 	\includegraphics[width=5cm]{./images/neg-imp-conv.png}
        	 \end{minipage}
-            
+   
+		\begin{minipage}[c]{12cm}        
         \subsubsection{Differentiator}
-			\begin{minipage}[b]{12cm}
-           		Beim Differentiator gilt: \\ 
-           		$v_{out}=v_N-i_1 \cdot R_F$, wobei $v_N=0$ und $i_1=C_1 \cdot \frac{dv_C}{dt}$\\
-           		Somit folgt:\\
-           		$v_{out}=-R_FC_1 \frac{dv_{in}}{dt}$\\
+           	Beim Differentiator gilt: \\ 
+           	$v_{out}=v_N-i_1 \cdot R_F$, wobei $v_N=0$ und $i_1=C_1 \cdot \frac{dv_C}{dt}$\\
+           	Somit folgt:\\
+           	$v_{out}=-R_FC_1 \frac{dv_{in}}{dt}$\\
            		
-           		Die Elemente $C_F$ und $R_1$ sind nicht nötig, doch sie beheben eine\\
-           		eine Reihe Probleme des elementaren Differentiators und fügen eine \\
-           		{\bf Bandpass}-Charakteristik ein. \\
-           		- Weniger Schwingneigung \\
-           		- Höherer Eingangswiderstand \\
-           		$\omega_1 = \frac{1}{R_1 \cdot C_1}$\\
-           		$\omega_2 = \frac{1}{R_F \cdot C_F}$\\      
-           	\end{minipage}
-			\begin{minipage}[t]{6cm}
-           		\includegraphics[width=6cm]{./images/differentiator.png}
-           	\end{minipage}
-
+           	Die Elemente $C_F$ und $R_1$ sind nicht nötig, doch sie beheben eine\\
+           	eine Reihe Probleme des elementaren Differentiators und fügen eine \\
+           	{\bf Bandpass}-Charakteristik ein. \\
+           	- Weniger Schwingneigung \\
+           	- Höherer Eingangswiderstand \\
+           	$\omega_1 = \frac{1}{R_1 \cdot C_1}$\\
+           	$\omega_2 = \frac{1}{R_F \cdot C_F}$\\      
+        \end{minipage}
+		\begin{minipage}[c]{5cm}
+        	\includegraphics[width=5cm]{./images/differentiator.png}
+        \end{minipage}
+\hrule
+		\begin{minipage}[c]{12cm}
 		\subsubsection{Integrator} 
-		\vspace{1cm}
-		\begin{minipage}[b]{12cm}
-		$v_{out}=-\frac{1}{C} \int{i_C}dt + v_0$
-		$v_{out}=-\frac{1}{RC} \int{v_{in}}dt +
-		v_0 $\\
-		$\frac{dv_{out}}{dt}=-\frac{v_{in}}{RC}$\\
-		Der Widerstand $R_F$ erzeugt eine {\bf Tiefpass}-Charakteristik. \\
-		Ein "Reset"-Schalter über $C$ kann Verhindern, dass der Integrator an\\
-		den Anschlag läuft.
+			$v_{out}=-\frac{1}{C} \int{i_C}dt + v_0$
+			$v_{out}=-\frac{1}{RC} \int{v_{in}}dt +
+			v_0 $\\
+			$\frac{dv_{out}}{dt}=-\frac{v_{in}}{RC}$\\
+			Der Widerstand $R_F$ erzeugt eine {\bf Tiefpass}-Charakteristik. \\
+			Ein "Reset"-Schalter über $C$ kann Verhindern, dass der Integrator an\\
+			den Anschlag läuft.
 		\end{minipage} 
-		\begin{minipage}[c]{6cm}
-          	\includegraphics[width=6cm]{./images/integrator.png} 
+		\begin{minipage}[c]{5cm}
+          	\includegraphics[width=5cm]{./images/integrator.png} 
         \end{minipage}\\
-        
-        \subsubsection{Gesteuerte Quellen}
-			\begin{tabular}{|c|c|c|}
-				\hline
-				\multirow{2}{*}{Steuergrösse} & \multicolumn{2}{c|}{Ausgangsgrösse}\\ \cline{2-3}
-				& V & I \\ \hline
-				\multirow{8}{*}{V}	& Spannungsgesteuerte Spannungsquelle	& Spannungsgesteuerte Stromquelle		\\
-									& \bf{VCVS}								& \bf{VCCS}								\\
-									& Voltage Controlled Voltage Source		& Voltage Controlled Current Source		\\ \cline{2-3}
-									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/vcvs.png}	
-									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/vccs.png}					\\ \cline{2-3}
-									& $v_{out}=v_{in} \cdot A_v$			& $i_{out} = v_{in} \cdot g_m$			\\
-									& $A_v$: Spannungsverstärkung			& $g_m$: Transkonduktanz				\\ \cline{2-3}
-									& Normaler OP-Amp Verstärker
-									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/vccs_schaltung.png}		\\
-									&	& $I_2=\frac{V_1}{R_1}$ bzw. $I_2=-\frac{V_1}{R_1}$							\\ 	\hline	
-				\multirow{8}{*}{I}	& Stromgesteuerte Spannungsquelle		& Stromgesteuerte Stromquelle			\\
-									& \bf{CCVS}								& \bf{CCCS}								\\
-									& Current Controlled Voltage Source		& Current Controlled Current Source		\\ \cline{2-3}
-									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/ccvs.png}	
-									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/cccs.png}					\\ \cline{2-3}
-									& $v_{out}=i_{in} \cdot r_m$			& $i_{out} = i_{in \cdot A_i}$			\\
-									& $r_m$: Transimpedanz					& $A_i$: Stromverstärkung				\\ \cline{2-3}
-									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/tia.png}
-									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/cccs-schaltung.png}		\\ 
-									& $v_{out}=-i_{in} \cdot r_F$			& $A_i=\frac{I_2}{I_1}=\frac{R_1}{R_2}$	\\ \hline
-									
-				
-			\end{tabular} \\	
-			
+\hrule        
+%        \subsubsection{Gesteuerte Quellen}
+%			\begin{tabular}{|c|c|c|}
+%				\hline
+%				\multirow{2}{*}{Steuergrösse} & \multicolumn{2}{c|}{Ausgangsgrösse}\\ \cline{2-3}
+%				& V & I \\ \hline
+%				\multirow{8}{*}{V}	& Spannungsgesteuerte Spannungsquelle	& Spannungsgesteuerte Stromquelle		\\
+%									& \bf{VCVS}								& \bf{VCCS}								\\
+%									& Voltage Controlled Voltage Source		& Voltage Controlled Current Source		\\ \cline{2-3}
+%									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/vcvs.png}	
+%									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/vccs.png}					\\ \cline{2-3}
+%									& $v_{out}=v_{in} \cdot A_v$			& $i_{out} = v_{in} \cdot g_m$			\\
+%									& $A_v$: Spannungsverstärkung			& $g_m$: Transkonduktanz				\\ \cline{2-3}
+%									& Normaler OP-Amp Verstärker
+%									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/vccs_schaltung.png}		\\
+%									&	& $I_2=\frac{V_1}{R_1}$ bzw. $I_2=-\frac{V_1}{R_1}$							\\ 	\hline	
+%				\multirow{8}{*}{I}	& Stromgesteuerte Spannungsquelle		& Stromgesteuerte Stromquelle			\\
+%									& \bf{CCVS}								& \bf{CCCS}								\\
+%									& Current Controlled Voltage Source		& Current Controlled Current Source		\\ \cline{2-3}
+%									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/ccvs.png}	
+%									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/cccs.png}					\\ \cline{2-3}
+%									& $v_{out}=i_{in} \cdot r_m$			& $i_{out} = i_{in \cdot A_i}$			\\
+%									& $r_m$: Transimpedanz					& $A_i$: Stromverstärkung				\\ \cline{2-3}
+%									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/tia.png}
+%									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/cccs-schaltung.png}		\\ 
+%									& $v_{out}=-i_{in} \cdot r_F$			& $A_i=\frac{I_2}{I_1}=\frac{R_1}{R_2}$	\\ \hline
+%									
+%				
+%			\end{tabular} \\	
+		
+		\begin{minipage}[c]{12cm}	
 		\subsubsection{Komparatorschaltung}
-			\begin{minipage}{18cm}
-            	Wenn ein Operationsverstärker als {\it Verstärker ohne
-            	Gegenkopplung} betrieben wird, spricht man von einer {\it
-            	Komparatorschaltung}. Der Operationsverstärker wird dann als {\it
-            	Komparator} betrieben.\\
-            	\includegraphics[width=16cm]{./images/komparator.png}\\
-            	Beim nichtinvertierenden Komparator (links)\\
-            	\begin{tabular}{|l|l|l|} \hline
-            		Bedingung & Nichtinvertierend & invertierend \\ \hline
-            		$V_{in} > V_{ref} \pm V_{os}$	
-            		& $V_{out} = V_{out_{max}} = V_{pos}-V_{rail}$ 
-            		& $V_{out} = V_{out_{min}} = V_{neg}+V_{rail}$\\ \hline
-            		$V_{in} < V_{ref} \pm V_{os}$
-            		& $V_{out} = V_{out_{min}} = V_{neg}+V_{rail}$ 
-            		& $V_{out} = V_{out_{max}} = V_{pos}-V_{rail}$ \\ \hline
+				Nicht-invertierender Komparator \\	
+            	\begin{tabular}{|l|l|} \hline
+            		$V_{in} > V_{ref} \pm V_{os}$ & $V_{out} = V_{out_{max}} = V_{pos}-V_{rail}$ \\
+            		$V_{in} < V_{ref} \pm V_{os}$ & $V_{out} = V_{out_{min}} = V_{neg}+V_{rail}$ \\ \hline
+            	\end{tabular} \\
+            	
+            	Invertierender Komparator \\
+            	\begin{tabular}{|l|l|} \hline
+            		$V_{in} > V_{ref} \pm V_{os}$ & $V_{out} = V_{out_{min}} = V_{neg}+V_{rail}$ \\
+            		$V_{in} < V_{ref} \pm V_{os}$ & $V_{out} = V_{out_{max}} = V_{pos}-V_{rail}$ \\ \hline
             	\end{tabular}
+			\end{minipage}
+			\begin{minipage}[c]{6cm}
+            	\includegraphics[width=4cm]{./images/komparator.png} \\
             \end{minipage}
-
-		\subsubsection{Schmitt-Trigger}
-		Nichtinvertierender Schmitt-Trigger\\
-			\begin{minipage}{9cm}
-	          	\includegraphics[width=8cm]{./images/n-schmitt.png} 
-	        \end{minipage}
-			\begin{minipage}{9cm}
-	          	\includegraphics[width=4cm]{./images/n-schmitt-kennlinie.png} 
-	        \end{minipage}\\
-		Invertierender Schmitt-Trigger\\
-			\begin{minipage}{9cm}
-	          	\includegraphics[width=8cm]{./images/i-schmitt.png} 
-	        \end{minipage}
-			\begin{minipage}{9cm}
-	          	\includegraphics[width=4cm]{./images/i-schmitt-kennlinie.png} 
-	        \end{minipage}\\
-			
-			\begin{minipage}{18cm}
-               	Hysteresespannung:\\
-               	\hspace*{10mm}
-               	\begin{tabular}{| c | c |}
-                \hline
-                Nichtinvertierender Schmitt-Trigger & Invertierender
-                Schmitt-Trigger\\
-                \hline
-                $V_H=(V_{out \hspace{1mm} max}-V_{out \hspace{1mm}
-                min})\frac{R_1}{R_F}$ &
-                $V_H=(V_{out \hspace{1mm} max}-V_{out \hspace{1mm}
-                min})\frac{R_1}{R_1+R_F}$\\
-                \hline
-            \end{tabular}\\ \\
-				Schwellspannung:\\
-				\hspace*{10mm}
-			\begin{tabular}{| c | c |}
-                \hline
-                Nichtinvertierender Schmitt-Trigger & Invertierender
-                Schmitt-Trigger\\
-                \hline
-                $V_{T+}=V_{ref}+(V_{ref}-V_{out
-                \hspace{1mm} min})\frac{R_1}{R_F}$ &
-                $V_{T+}=V_{ref}+(V_{out \hspace{1mm}
-                max}-V_{ref})\frac{R_1}{R_1+R_F}$\\
-                \hline
-                $V_{T-}=V_{ref}-(V_{out
-                \hspace{1mm} max}-V_{ref})\frac{R_1}{R_F}$ &
-                $V_{T-}=V_{ref}-(V_{ref}-V_{out \hspace{1mm}
-                min})\frac{R_1}{R_1+R_F}$\\
-                \hline
-            \end{tabular}\\
-            \end{minipage}
-	
+\hrule
+	\subsection{Schmitt-Trigger}
+        \subsubsection{Nicht invertierender Schmitt-Trigger}
+			\begin{minipage}[T]{13cm}
+                obere Schaltschwelle
+                \hspace{10.8mm}\fbox{$V_{T+} = V_{ref}\cdot \frac{R_1+R_f}{R_f}-V_{out_{min}}\cdot\frac{R_1}{R_f}$}\\
+                untere Schaltschwelle
+                \hspace{9.6mm}\fbox{$V_{T-} = V_{ref}\cdot \frac{R_1+R_f}{R_f}-V_{out_{max}}\cdot\frac{R_1}{R_f}$}\\
+                Hysteresespannung
+                \hspace{12.8mm}\fbox{$V_{H} = V_{T+}-V_{T-} = (V_{out_{max}}-V_{out_{min}})\cdot\frac{R_1}{R_f}$}\\
+            \end{minipage} 
+            \begin{minipage}{6cm}
+                \includegraphics[width=6cm]{./images/n-schmitt.png} 
+            \end{minipage}\\
+            
+        \subsubsection{Invertierender Schmitt-Trigger}
+            \begin{minipage}[T]{13cm}
+                obere Schaltschwelle
+                \hspace{10.8mm}\fbox{$V_{T+} = \frac{V_{ref}\cdot R_f+ V_{out_{max}}\cdot R_1}{R_1+R_f}$}\\
+                untere Schaltschwelle
+                \hspace{9.6mm}\fbox{$V_{T-} = \frac{V_{ref}\cdot R_f+ V_{out_{min}}\cdot R_1}{R_1+R_f}$}\\
+                Hysteresespannung
+                \hspace{12.8mm}\fbox{$V_{H} = V_{T+}-V_{T-} = (V_{out_{max}}-V_{out_{min}})\cdot\frac{R_1}{R_1+R_f}$}\\
+            \end{minipage} 
+            \begin{minipage}{6cm}
+                \includegraphics[width=6cm]{./images/i-schmitt.png} 
+            \end{minipage}\\
+            
+        \subsubsection{Invertierender Schmitt-Trigger mit freien Schwellen}
+        \begin{minipage}[T]{13cm}
+            Schaltschwelle
+            \hspace{20.8mm}\fbox{$V_{opp} =V_{ref}\cdot \frac{(R_f//R_0)}{R_1 +(R_f//R_0)}+V_{out}\cdot\frac{(R_1//R_0)}{R_f+(R_1//R_0)}$}\\
+            
+            Dimensionierung des Schmitt-Triggers: (Gegeben: $V_{ref}$, $V_{T+}$, $V_{T-}$)\\
+            1. $V_{out_{max}}$ und $V_{out_{min}}$ ermitteln aus Datenblatt (meistens $V_{DD}$, $GND$)\\
+            2. $R_f$ w\"ahlen: typisch $100 k\Omega$\\
+            3. Widerst\"ande $R_1$ und $R_0$ dimensionieren\\
+        \end{minipage} 
+        \begin{minipage}{6cm}
+            \includegraphics[width=6cm]{./images/i-schmittFreieSchwellen.png} 
+        \end{minipage}\\
 
 
 	\subsection{Fehlereinflüsse des Opamp}
