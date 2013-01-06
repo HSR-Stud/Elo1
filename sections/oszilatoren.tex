@@ -1,9 +1,20 @@
-\section{Oszilatoren}
+\section{Oszillatoren}
 \subsection{Typen}
 	\begin{center}
 		\includegraphics[width=11cm]{images/osziTypen.png}
 	\end{center}
-\subsection{Rechteckgenerator}
+
+\subsection{Untuned Oscillators}
+	\subsubsection{Astabiler Multivibrator mit Transistor}
+	\begin{minipage}{6cm}
+		\includegraphics[width=6cm]{images/multiVibrator}
+	\end{minipage}
+	\begin{minipage}{10cm}
+		$t_1 = t_2 = 0.7 \cdot 100k\omega \cdot 100\mu F$ \\
+		$T = t_1 + t_2$
+	\end{minipage}
+
+\subsubsection{Astabiler Multivibrator mit Komparator}
 	\begin{multicols}{3}
 		\includegraphics[width=6cm]{images/osziRechteck.png}
 		\columnbreak
@@ -20,7 +31,7 @@
 		\left( 2.72 \right) = 1$\\
 		$\Longrightarrow f=\frac{1}{2\cdot R_1C_1}$
 	\end{multicols}
-\subsection{Dreieck Rechteck Generator}
+\subsubsection{Dreieck Rechteck Generator}
 	\begin{multicols}{3}
 		\begin{center}
 			\includegraphics[width=3.5cm]{images/osziDreieckRechteckBlock.png}\\
@@ -35,7 +46,17 @@
 		$V_H=2\left|V_T\right|=\left(V_{outMAX}-V_{outMIN}\right)\frac{R_2}{R_3}$\\
 		$T=\frac{2\cot V_H \cdot R_1C}{V_{outMAX}}$\\
 	\end{multicols}
-\subsection{Ringoszilatoren}
+\subsubsection{Kippschaltung}
+	\begin{minipage}{9cm}
+		\includegraphics[width=9cm]{images/kippschaltung}
+	\end{minipage}
+	\begin{minipage}{6cm}
+		$\tau = R \cdot C $\\
+		$T_1 = \tau \cdot \ln \left(\frac{U_{AH}-U_{SL}}{U_{AH}-U_{SH}} \right)$ \\
+		$T_2 = \tau \cdot \ln \left(\frac{U_{SH}-U_{AL}}{U_{SL}-U_{AL}} \right)$ \\
+		$f = \frac{1}{T_1 + T_2}$
+	\end{minipage}
+\subsubsection{Ringoszilatoren}
 	\begin{multicols}{3}
 	 	\includegraphics[width=6cm]{images/osziRing.png}	
 		\columnbreak
@@ -45,7 +66,7 @@
 		
 		\includegraphics[width=6cm]{images/osziRingCMOS.png}
 	\end{multicols}
-\subsection{VCO (voltage controlled oscialltors)}
+\subsubsection{VCO (voltage controlled oscialltors)}
 	\begin{multicols}{2}
 		\includegraphics[width=9cm]{images/osciVCO.png}
 		\columnbreak
@@ -53,9 +74,11 @@
 		$OP4$ bildet mit $R_1$ und $R_2$ einen Schmitt-Trigger.\\
 		$OP3$ bildet mit $R$ und $C$ ein Integrator.\\
 		$f_{osc}=\frac{R_2}{4\cdot R_1}\cdot \frac{1}{RC}\cdot
-		\frac{V_{ctrl}}{\left|V_{out}\right|}=K_{VCO}\cot V_{ctrl}$\\
+		\frac{V_{ctrl}}{\left|V_{out}\right|}$\\
 	\end{multicols}
-\subsection{LC-Oszillator}
+	
+\subsection{Tuned Oscillators}	
+\subsubsection{LC-Oszillator}
 	\begin{multicols}{3}
 		\includegraphics[width=6cm]{images/osziLC.png}\\
 		Aufbau eine Colpitts-Oszillators
@@ -70,7 +93,7 @@
 		$\geq$
 		$A=\frac{C_2}{C_1}$ bzw. $A\geq\frac{C_2}{C_1}$
 	\end{multicols}
-\subsection{Quarz-Oszilator}
+\subsubsection{Quarz-Oszilator}
 	\begin{multicols}{3}
 		\includegraphics[width=3cm]{images/osziCrystal.png}
 		\columnbreak
