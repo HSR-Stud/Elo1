@@ -11,7 +11,7 @@
 			\begin{minipage}[T]{12cm}
        	\begin{tabular}{ll}
        	Closed-Loop Spannung: & 
-       	$A_{CL}=\frac{v_{out}}{v_{in}}=-\frac{R_F}{R_1}$\\
+       	$A_{CL}=\frac{u_{out}}{v_{in}}=-\frac{R_F}{R_1}$\\
        	& $v_{out} = -v_{in}\cdot\frac{R_F}{R_1}$\\
        	$i_1=\frac{v_{in}+v_d}{R_1}$ & 
       	$i_F=-\frac{v_{out}+v_d}{R_F}$\\
@@ -28,7 +28,8 @@
 			\begin{minipage}{6cm}
        	\includegraphics[width=6cm]{./images/i-verstaerker.png}
       \end{minipage}\\
-\hrule      
+\hrule
+      
 	\subsubsection{Nichtinvertierender Verstärker}
 			Beim nichtinvertierenden Verstärker ist die Ausgangsspannung
       gleichphasig zur Eingangsspannung.\\ 
@@ -54,18 +55,20 @@
       	\includegraphics[width=6cm]{./images/ni-verstaerker.png}
       \end{minipage}\\
 \hrule
+
 		\begin{minipage}{12.5cm}
 		\subsubsection{Verstärker mit mehreren Eingängen}
             	$A_{CL1}=-\frac{R_F}{R_1}$\\
             	$A_{CL2}=-\frac{R_F}{R_2}$\\
             	$A_{CL3}=\frac{R_F+(R_1//R_2)}{(R_1//R_2)}$\\
             	$v_{out}=A_{CL1}v_1+A_{CL2}v_2+A_{CL3}v_3=
-            	-\frac{R_F}{R_1}v_1-\frac{R_F}{R_2}v_2+\frac{R_F+(R_1//R_2)}{(R_1//R_2)}$\\
+            	-\frac{R_F}{R_1}v_1-\frac{R_F}{R_2}v_2+\frac{R_F+(R_1//R_2)}{(R_1//R_2)}v_3$\\
      	\end{minipage}
 		\begin{minipage}{6cm}
       		\includegraphics[width=6cm]{./images/3-eingaenge.png}
       	\end{minipage}\\
 \hrule
+
 		\begin{minipage}[c]{12cm}
 		\subsubsection{Invertierender Addierer}
             $V_{out}=A_{CL1}V_{IN1}+A_{CL2}V_{IN2}+\ldots$\\
@@ -77,6 +80,7 @@
       		\includegraphics[width=5cm]{./images/invertadd.png}
       	\end{minipage}\\
 \hrule
+
 		\begin{minipage}[c]{12cm}
 		\subsubsection{Gewichteter Subtrahierer}
             	$A_{CL1}=- \frac{R_F}{R_1}$\\
@@ -103,6 +107,7 @@
           	\includegraphics[width=6cm]{./images/mehrfach-addierer-subtrahierer.png} 
         \end{minipage}\\
 \hrule
+
 		\begin{minipage}[c]{12cm}
 		\subsubsection{Differenzverstärker}
 				Generell: \\
@@ -118,6 +123,7 @@
             	\includegraphics[width=6cm]{./images/differenzver.png}
             \end{minipage}\\
 \hrule
+
 		\begin{minipage}[c]{12cm}
 		\subsubsection{Instrumentenverstärker}
 			1. Stufe: Invertierender Verstärker \\
@@ -132,7 +138,8 @@
 			\begin{minipage}[c]{6cm}
           		\includegraphics[width=6cm]{./images/instramp.png} 
        	 	\end{minipage}\\
-\hrule      	 
+\hrule     
+ 	 
       	 \begin{minipage}[c]{12cm}	
        	 \subsubsection{T-Glied in Rückkopplung}
        	 	Für $A \to \infty$ (idealer OP) gilt: \smallskip \\
@@ -145,7 +152,8 @@
        	 \begin{minipage}[c]{5cm}
        	 	\includegraphics[width=5cm]{./images/tglied.png}
        	 \end{minipage}
-\hrule       	 
+\hrule      
+ 	 
        	 \begin{minipage}[c]{12cm}
        	 \subsubsection{Negative Impedance Converter}
        	 	Der Negative Impedance Converter (NIC) stellt einen negativen reellen Widerstand
@@ -176,6 +184,7 @@
         	\includegraphics[width=5cm]{./images/differentiator.png}
         \end{minipage}
 \hrule
+
 		\begin{minipage}[c]{12cm}
 		\subsubsection{Integrator} 
 			$v_{out}=-\frac{1}{C} \int{i_C}dt + v_0$
@@ -189,7 +198,8 @@
 		\begin{minipage}[c]{5cm}
           	\includegraphics[width=5cm]{./images/integrator.png} 
         \end{minipage}\\
-\hrule        
+\hrule     
+   
 %        \subsubsection{Gesteuerte Quellen}
 %			\begin{tabular}{|c|c|c|}
 %				\hline
@@ -237,6 +247,7 @@
             	\includegraphics[width=4cm]{./images/komparator.png} \\
             \end{minipage}
 \hrule
+
 	\subsection{Schmitt-Trigger}
         \subsubsection{Nicht invertierender Schmitt-Trigger}
 			\begin{minipage}[T]{13cm}
