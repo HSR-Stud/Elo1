@@ -27,9 +27,8 @@
 		$V_c(t)=V_{T-}+\left(V_{outMAX}-V_{T-}\right)\left(1-e^{\frac{-t}{R_1\cdot
 		C_1}}\right)$\\
 		$f=\frac{1}{T}=\frac{1}{2R_1C_1 ln \frac{R_3+2R_2}{R3}}$\\
-		wenn: $R2 = 0.86 \cdot R_3$ dann $ln\frac{R_3 +2 \cdot 0.86 \cdot R_3}{R_3}=ln
-		\left( 2.72 \right) = 1$\\
-		$\Longrightarrow f=\frac{1}{2\cdot R_1C_1}$
+		wenn: $R2 = 0.86 \cdot R_3$ dann gilt:\\
+		$f=\frac{1}{2\cdot R_1C_1}$
 	\end{multicols}
 \subsubsection{Dreieck Rechteck Generator}
 	\begin{multicols}{3}
@@ -66,46 +65,57 @@
 		
 		\includegraphics[width=6cm]{images/osziRingCMOS.png}
 	\end{multicols}
-\subsubsection{VCO (voltage controlled oscialltors)}
-	\begin{multicols}{2}
-		\includegraphics[width=9cm]{images/osciVCO.png}
-		\columnbreak
-		
-		$OP4$ bildet mit $R_1$ und $R_2$ einen Schmitt-Trigger.\\
-		$OP3$ bildet mit $R$ und $C$ ein Integrator.\\
-		$f_{osc}=\frac{R_2}{4\cdot R_1}\cdot \frac{1}{RC}\cdot
-		\frac{V_{ctrl}}{\left|V_{out}\right|}$\\
-	\end{multicols}
 	
-\subsection{Tuned Oscillators}	
-\subsubsection{LC-Oszillator}
-	\begin{multicols}{3}
-		\includegraphics[width=6cm]{images/osziLC.png}\\
-		Aufbau eine Colpitts-Oszillators
+\subsection{Tuned Oscillators}
+	Oszillatoren mit Rückkopplung. Schwingbedingung: Verstärkung im gesamten Kreis $=1$. 
+	\subsubsection{LC-Oszillator}
+		\begin{multicols}{2}
+			\textbf{Normaler LC-Oszillator} \\
+			\includegraphics[width=6cm]{images/lcOszillator}
+			
+		\columnbreak
+			$U_2(t) = (1+\frac{R_2}{R_1}) \cdot U_1(t) = V_u \cdot U_1(t)$ \\
+			
+			Daraus folgt die Schwingungsgleichung \\
+			$\frac{d^2 U_1(t)}{dt^2}+2k\omega_0 \frac{dU_1(t)}{dt}+\omega^2U_1(t)=0$ \\
+			
+			und \\
+			$\omega_0 = \frac{1}{\sqrt{L\cdot C}}$
+		\end{multicols}
+		
+		\begin{multicols}{2}
+			\textbf{Colpitts-Oszillator}\\
+			\includegraphics[width=6cm]{images/osziLC.png}\\
+			
 		\columnbreak
 		
-		$T\left(s\right)=\frac{-A}{1+sR\left(C_1+C_2\right)+s^2LC_2+s^3RLC_1C_2}$\\
-		$s=j\omega$ und $\Im{T\left(j\omega\right)}=0$ ergeben $\omega_0$\\
-		$\omega_0=\frac{1}{\sqrt{L\frac{C_1 C_2}{C_1+C_2}}}$\\
-		\columnbreak
+			$\omega_0=\frac{1}{\sqrt{L\frac{C_1 C_2}{C_1+C_2}}}$\\
+			
+		\end{multicols}
+
+	\subsubsection{Quarz-Oszilator}
+		\begin{tabular}{lll}
+			\textbf{Ersatzschaltung} & \textbf{Phasengang} & \textbf{Anwendung} \\
+			\begin{minipage}{6cm}
+				\includegraphics[width=3cm]{images/osziCrystal.png}
+			\end{minipage} &
+			\begin{minipage}{6cm}
+				\includegraphics[width=5cm]{images/quarz-kennl.png}
+			\end{minipage} & 
+			\begin{minipage}{6cm}
+					\includegraphics[width=5cm]{images/quarz-schaltung.png}
+			\end{minipage}	\\
+		\end{tabular}	
+			
+		Frequenzabweichung: $\frac{\Delta f}{f_0} \approx 10^{-6} \dots 10^{-10}$ \\
 		
-		Aus $T\left(j\omega\right)=1$ ergeben die Amplituden = und Anschwingbedignugnen
-		$\geq$
-		$A=\frac{C_2}{C_1}$ bzw. $A\geq\frac{C_2}{C_1}$
-	\end{multicols}
-\subsubsection{Quarz-Oszilator}
-	\begin{multicols}{3}
-		\includegraphics[width=3cm]{images/osziCrystal.png}
-		\columnbreak
-		
-		$Z_{Xtal}\left(\omega\right)=\frac{\left(R+sL+\frac{1}{sC}\right)\frac{1}{sC_0}}{R+sL+\frac{1}{sC}+\frac{1}{sC_0}}$\\
-		\\
-		Wenn $R \ll \omega L$:\\
-		$Z_{Xtal}\left(\omega\right)=\frac{s^2LC+1}{s\left(s^2LCC_0+C+C_0\right)}$\\
-		\columnbreak
-		
-		f\"ur $Z\left(s\right)=jX\left(\omega\right)$:\\
-		\\
-		$X\left(\omega\right)=-\frac{1}{\omega C_0}\cdot \frac{\omega^2 -
-		\omega_s^2}{\omega^2-\omega^2_P}$
-	\end{multicols}
+	\subsection{Spannungsgesteuerte Oszillatoren (VCO)}
+		\begin{minipage}{12cm}
+			\includegraphics[width=12cm]{images/vco.png}
+		\end{minipage}
+		\begin{minipage}{6cm}
+			$f_{osc} = \frac{R_1 + R_2}{4 R_1} \cdot \frac{1}{RC} \cdot \frac{U_{ctrl}}{|U_{out}|}$ \\
+			
+			was vereinfacht wird zu \\
+			$f_{osc} = K_{VCO} \cdot U_{ctrl}$ mit $K_{VCO}$ als konstantem Faktor.
+		\end{minipage}
