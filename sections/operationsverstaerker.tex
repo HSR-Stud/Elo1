@@ -11,7 +11,7 @@
 			\begin{minipage}[T]{12cm}
        	\begin{tabular}{ll}
        	Closed-Loop Spannung: & 
-       	$A_{CL}=\frac{u_{out}}{v_{in}}=-\frac{R_F}{R_1}$\\
+       	$A_{CL}=\frac{v_{out}}{v_{in}}=-\frac{R_F}{R_1}$\\
        	& $v_{out} = -v_{in}\cdot\frac{R_F}{R_1}$\\
        	$i_1=\frac{v_{in}+v_d}{R_1}$ & 
       	$i_F=-\frac{v_{out}+v_d}{R_F}$\\
@@ -22,7 +22,9 @@
        	OP mit Offset: & \begin{tabular}{l l}
        		$v_{out}$ &$=  \frac{R_1+R_F}{R_1} \cdot (v_0+v_d)$ \\
        		& $-\frac{R_F}{R_1} \cdot v_{in}$
-       		\end{tabular}
+       		\end{tabular} \\
+       		Für $A_{OL} \neq \gg A_{CL}$: & $v_{out} = 
+       		\frac{A_{OL}}{1+A_{OL}\cdot \frac{R_1}{R_1+R_2}}\cdot (v_{in}-v_{os})$
        	\end{tabular}
       \end{minipage}
 			\begin{minipage}{6cm}
@@ -47,11 +49,14 @@
           $r_{in}=\infty$\\
           OP mit Offset: &
           $v_{out} \cong \frac{R_1+R_F}{R_1} \cdot (v_{in}-v_{offset})$\\
+          Für $A_{OL} \neq \gg A_{CL}$: & $v_{out} = 
+          \frac{1}{\frac{R_1}{R_1+R_2}+\frac{1}{A_{OL}}}\cdot v_{in}$ \\
         \end{tabular}
+        
         Für $R_1 \to \infty$ und $R_F \to 0$ wird der Operationsverstärker zu einem
         Buffer.          	
       \end{minipage}
-			\begin{minipage}{6cm}
+      \begin{minipage}{6cm}
       	\includegraphics[width=6cm]{./images/ni-verstaerker.png}
       \end{minipage}\\
 \hrule
@@ -79,7 +84,6 @@
 		\begin{minipage}{5cm}
       		\includegraphics[width=5cm]{./images/invertadd.png}
       	\end{minipage}\\
-\hrule
 
 		\begin{minipage}[c]{12cm}
 		\subsubsection{Gewichteter Subtrahierer}
@@ -93,6 +97,7 @@
 			\begin{minipage}{5cm}
             	\includegraphics[width=5cm]{./images/gewichtsub.png}
             \end{minipage}\\
+\hrule
 
 		\begin{minipage}[b]{12cm}
 		\subsubsection{Mehrfach-Addierer-Subtrahierer} 		
@@ -151,8 +156,7 @@
        	 \end{minipage}
        	 \begin{minipage}[c]{5cm}
        	 	\includegraphics[width=5cm]{./images/tglied.png}
-       	 \end{minipage}
-\hrule      
+       	 \end{minipage}      
  	 
        	 \begin{minipage}[c]{12cm}
        	 \subsubsection{Negative Impedance Converter}
@@ -164,6 +168,7 @@
        	 \begin{minipage}[c]{5cm}
        	 	\includegraphics[width=5cm]{./images/neg-imp-conv.png}
        	 \end{minipage}
+\hrule
    
 		\begin{minipage}[c]{12cm}        
         \subsubsection{Differentiator}
@@ -198,36 +203,7 @@
 		\begin{minipage}[c]{5cm}
           	\includegraphics[width=5cm]{./images/integrator.png} 
         \end{minipage}\\
-\hrule     
-   
-%        \subsubsection{Gesteuerte Quellen}
-%			\begin{tabular}{|c|c|c|}
-%				\hline
-%				\multirow{2}{*}{Steuergrösse} & \multicolumn{2}{c|}{Ausgangsgrösse}\\ \cline{2-3}
-%				& V & I \\ \hline
-%				\multirow{8}{*}{V}	& Spannungsgesteuerte Spannungsquelle	& Spannungsgesteuerte Stromquelle		\\
-%									& \bf{VCVS}								& \bf{VCCS}								\\
-%									& Voltage Controlled Voltage Source		& Voltage Controlled Current Source		\\ \cline{2-3}
-%									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/vcvs.png}	
-%									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/vccs.png}					\\ \cline{2-3}
-%									& $v_{out}=v_{in} \cdot A_v$			& $i_{out} = v_{in} \cdot g_m$			\\
-%									& $A_v$: Spannungsverstärkung			& $g_m$: Transkonduktanz				\\ \cline{2-3}
-%									& Normaler OP-Amp Verstärker
-%									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/vccs_schaltung.png}		\\
-%									&	& $I_2=\frac{V_1}{R_1}$ bzw. $I_2=-\frac{V_1}{R_1}$							\\ 	\hline	
-%				\multirow{8}{*}{I}	& Stromgesteuerte Spannungsquelle		& Stromgesteuerte Stromquelle			\\
-%									& \bf{CCVS}								& \bf{CCCS}								\\
-%									& Current Controlled Voltage Source		& Current Controlled Current Source		\\ \cline{2-3}
-%									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/ccvs.png}	
-%									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/cccs.png}					\\ \cline{2-3}
-%									& $v_{out}=i_{in} \cdot r_m$			& $i_{out} = i_{in \cdot A_i}$			\\
-%									& $r_m$: Transimpedanz					& $A_i$: Stromverstärkung				\\ \cline{2-3}
-%									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/tia.png}
-%									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/cccs-schaltung.png}		\\ 
-%									& $v_{out}=-i_{in} \cdot r_F$			& $A_i=\frac{I_2}{I_1}=\frac{R_1}{R_2}$	\\ \hline
-%									
-%				
-%			\end{tabular} \\	
+\hrule     	
 		
 		\begin{minipage}[c]{12cm}	
 		\subsubsection{Komparatorschaltung}
@@ -308,16 +284,22 @@
 			\begin{minipage}{6cm}
                	\includegraphics[width=6cm]{./images/verstaerkungsfaktor.png}
             \end{minipage}
+            
 		\subsubsection{Offsetspannungsfehler}
+			\begin{minipage}{14cm}
 				\begin{tabular}{ll}
 					Im Closed-Loop-Betrieb ist die Ausgangs-Fehlerspannung: &
-					$V_{out \hspace{1mm}E}=V_{OS}\left( 1+\frac{R_F}{R_1}\right)$\\
-          allgemein: &
-          $V_{out \hspace{1mm}E}=V_{OS} \cdot {A_{CL}}^{+}$\\
-          Im Open-Loop-Betrieb ist die Ausgangs-Fehlerspannung: &
-          $V_{out \hspace{1mm}E}=V_{OS}\cdot {A_{CL}}^{+}$\\
-          Typische Offsetspannung: & $V_{OS} \approx 0.5 \dots 5 \; mV$
-         \end{tabular}
+					$V_{out}=V_{OS}\left( 1+\frac{R_F}{R_1}\right)$\\
+          			allgemein: &
+       		   		$V_{out}=V_{OS} \cdot {A_{CL}}^{+}$\\
+         			Im Open-Loop-Betrieb ist die Ausgangs-Fehlerspannung: &
+          			$V_{out}=V_{OS}\cdot {A_{CL}}^{+}$\\
+          			Typische Offsetspannung: & $V_{OS} \approx 0.5 \dots 5 \; mV$
+         		\end{tabular}
+         	\end{minipage}
+         	\begin{minipage}{5cm}
+         		\includegraphics[width=5cm]{images/opOffset}
+         	\end{minipage}
 		
 		\subsubsection{Eingangsstromfehler}
 			\begin{minipage}{18cm}
@@ -407,15 +389,46 @@
 				$SR\geq V_{amplitude}\omega=V_{amplitude}2\pi f$\\
 				typische Slew-Rate: & $SR \approx 0.5 \dots 50 \frac{V}{\mu s}$
 			\end{tabular}
-
-			\includegraphics[height=5cm]{./images/slew-rate.png}\\
-
-			{\bf Anstiegszeit des Ausgangs:} \\
-			\begin{tabular}{ll}
-				$t_{rout}$ & = $\sqrt{t_{rin}^2 + t_{rAmp}^2}$ \\
-				$t_{rin}$  & = Anstiegszeit des Eingangssignals \\
-				$t_{rout}$ & = Anstiegszeit des Ausgangssignals \\
-				$t_{rAmp}$ & = $\frac{0.35}{f_{bw}} = $ Eigenanstiegszeit des Verstärkers \\
-				$f_{bw}$   & = Kleinsignalbandbreite des Verstärkers \\
-			\end{tabular}
-
+			
+			\begin{minipage}{8cm}
+				\includegraphics[height=5cm]{./images/slew-rate.png}\\
+			\end{minipage}
+			\begin{minipage}{8cm}
+				{\bf Anstiegszeit des Ausgangs:} \\
+				\begin{tabular}{ll}
+					$t_{rout}$ & = $\sqrt{t_{rin}^2 + t_{rAmp}^2}$ \\
+					$t_{rin}$  & = Anstiegszeit des Eingangssignals \\
+					$t_{rout}$ & = Anstiegszeit des Ausgangssignals \\
+					$t_{rAmp}$ & = $\frac{0.35}{f_{bw}} = $ Eigenanstiegszeit des Verstärkers \\
+					$f_{bw}$   & = Kleinsignalbandbreite des Verstärkers \\
+				\end{tabular}
+			\end{minipage}
+			
+       \subsection{Gesteuerte Quellen}
+			\begin{tabular}{|c|c|c|}
+				\hline
+				\multirow{2}{*}{Steuergrösse} & \multicolumn{2}{c|}{Ausgangsgrösse}\\ \cline{2-3}
+				& V & I \\ \hline
+				\multirow{8}{*}{V}	& Spannungsgesteuerte Spannungsquelle	& Spannungsgesteuerte Stromquelle		\\
+									& \bf{VCVS}								& \bf{VCCS}								\\
+									& Voltage Controlled Voltage Source		& Voltage Controlled Current Source		\\ \cline{2-3}
+									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/vcvs.png}	
+									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/vccs.png}					\\ \cline{2-3}
+									& $v_{out}=v_{in} \cdot A_v$			& $i_{out} = v_{in} \cdot g_m$			\\
+									& $A_v$: Spannungsverstärkung			& $g_m$: Transkonduktanz				\\ \cline{2-3}
+									& Normaler OP-Amp Verstärker
+									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/vccs_schaltung.png}		\\
+									&	& $I_2=\frac{V_1}{R_1}$ bzw. $I_2=-\frac{V_1}{R_1}$							\\ 	\hline	
+				\multirow{8}{*}{I}	& Stromgesteuerte Spannungsquelle		& Stromgesteuerte Stromquelle			\\
+									& \bf{CCVS}								& \bf{CCCS}								\\
+									& Current Controlled Voltage Source		& Current Controlled Current Source		\\ \cline{2-3}
+									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/ccvs.png}	
+									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/cccs.png}					\\ \cline{2-3}
+									& $v_{out}=i_{in} \cdot r_m$			& $i_{out} = i_{in \cdot A_i}$			\\
+									& $r_m$: Transimpedanz					& $A_i$: Stromverstärkung				\\ \cline{2-3}
+									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/tia.png}
+									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/cccs-schaltung.png}		\\ 
+									& $v_{out}=-i_{in} \cdot r_F$			& $A_i=\frac{I_2}{I_1}=\frac{R_1}{R_2}$	\\ \hline
+									
+				
+			\end{tabular} \\
