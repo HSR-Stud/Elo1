@@ -27,14 +27,40 @@
 		\end{tabular}
 		
 	\subsection{Temperaturverhalten}
-		Faustregel: Durchflusspannung $U_{F0}$ ändert um $-2 \frac{mV}{K}$! \\
-		$U_T$ in Abhängigkeit der Temperatur: 
-		$U_T(T) = \frac{k \cdot T}{q} = 86,142 \frac{\mu \text{V}}{\text{K}} \cdot T$
-		mit $U_T(300 \: K) = 26 mV$ \\
-		Der Sperrstrom verdoppelt sich je Temperaturunterschied à $10K$
+		Faustregel: Durchflusspannung $U_{F0}$ ändert um $-2 \frac{mV}{K}$! Der Sperrstrom verdoppelt sich je Temperaturunterschied à $10K$ \\
+		
+		\textbf{Thermospannung $U_T$:} \\
+		\begin{minipage}{6cm}
+			\begin{align*}
+				U_T &= \frac{k_B \cdot T}{q} \\
+				U_{T_{23^{\circ}C}} &= 25,5 mV 
+			\end{align*}
+		\end{minipage}
+		\begin{minipage}{10cm}
+			\begin{align*}
+			k_B &= 1,38065 \cdot 10^{-23} J/K &\text{Boltzmann-Konstante} \\
+			q &= 1,60218 \cdot 10^{-19} As &\text{Elementarladung} \\
+			\end{align*}
+		\end{minipage}
+
 	
-	
+\newpage	
 	\subsection{Spezielle Dioden und Anwendungen}
+		\subsubsection{Gleichrichter-Diode}
+			\begin{minipage}[T]{6cm}
+				\textbf{Einweg-Gleichrichter} \\
+				\includegraphics[width=5cm]{./images/gleichrichter-einweg} \\
+			\end{minipage}
+			\begin{minipage}[T]{6cm}
+				\textbf{Gleichrichter mit Glättung} \\
+				\includegraphics[width=5cm]{./images/gleichrichter-einweg-glaettung} \\
+				Bedingung: $\tau = R_L \cdot C_L \gg T$ \\
+			\end{minipage}
+			\begin{minipage}[T]{6cm}
+				\textbf{Brücken-Gleichrichter} \\
+				\includegraphics[width=6cm]{./images/gleichrichter-bruecke} \\
+			\end{minipage}						
+
 		\subsubsection{PIN-Diode}
 			Für höhere Spannungsfestigkeit wird eigenleitende Halbleiterzone, die sog. 
 			Intrinsic-Zone zwischen p- und n-dotierte Zone gelegt. Die Intrinsic-Zone
@@ -51,13 +77,19 @@
 			steilen Dotierungsverlauf. 
 			
 		\subsubsection{Zener-Diode}
-			\begin{minipage}[c]{6cm}
+			\begin{minipage}{6.5cm}
+				\textbf{Kennline} \\
 				\includegraphics[width=6cm]{./images/zdiode-kennlinie.png}
 			\end{minipage}
-			\begin{minipage}[c]{12cm}
-				Anstieg der Durchbruchkennlinie bei spezieller Dotierung \\
-				Anwendung: Spannungsbegrenzung und -stabilisierung  \\
-				\\
+			\begin{minipage}{4.5cm}
+				\textbf{Grosssignal-ESB:} \\
+				\includegraphics[width=4cm]{./images/zener-gs} \\
+				\textbf{Kleinsignal-ESB:} \\
+				\includegraphics[width=4cm]{./images/zener-ks}
+			\end{minipage}
+			\begin{minipage}{7.5cm}
+				Anstieg der Durchbruchkennlinie bei spezieller Dotierung. Anwendung: Spannungsbegrenzung und -stabilisierung  \\
+				
 				Temperaturkoeffizient abhängig von Zenerspannung. $~0$ bei $5.6V$ -
 				darüber: negativer Temperaturkoeffizient\\
 			\end{minipage} \\

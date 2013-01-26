@@ -1,8 +1,7 @@
-\section{Transitoren}
-
-\subsection{Bipolartransistoren}
+\newpage
+\section{Bipolartransistoren}
 	\begin{minipage}[c]{6cm}
-		\includegraphics[width=6cm]{images/bipolarTransistor-Aufbau}
+		\includegraphics[width=5cm]{images/bipolarTransistor-Aufbau}
 	\end{minipage}
 	\begin{minipage}[c]{12cm}
 		Links: NPN-Transistor \\
@@ -15,7 +14,7 @@
 	\end{minipage} \\
 	
 	\begin{multicols}{2}
-	\subsubsection{Betriebszustände}
+	\subsection{Betriebszustände}
 		\begin{tabular}{l l}
 			Normalbetrieb (Verstärker) & $V_{BE} > 0$, $V_{BC} < 0$\\
 			Sättigung (Schalter EIN) & $V_{BE} > 0$, $V_{BC} > 0$\\
@@ -23,7 +22,7 @@
 			Inversbetrieb (k. Anwendung) & $V_{BE} < 0$, $V_{BC} > 0$
 		\end{tabular} \\
 	\columnbreak
-	\subsubsection{Stromverstärkungs-Faktoren}
+	\subsection{Stromverstärkungs-Faktoren}
 		\begin{minipage}[c]{2.8cm}
 			Basisschaltung \\
 			\includegraphics[width=2.8cm]{images/bip-basissch}\\
@@ -41,7 +40,7 @@
 		\end{minipage}
 	\end{multicols}
 	
-	\subsubsection{Ebers-Moll-Modell}
+	\subsection{Ebers-Moll-Modell}
 		\begin{minipage}[c]{6cm}
 			\includegraphics[width=5.2cm]{images/bipolar-EbersMoll}
 		\end{minipage}
@@ -55,13 +54,13 @@
 			\end{tabular} 
 		\end{minipage}
 	
-	\subsubsection{Kennlinien \& Formeln}
+	\subsection{Kennlinien \& Formeln}
 		\begin{minipage}[c]{12cm}
 			{\bf Ausgangskennlinie (I)}\\
 				typ.: $U_{CE_{sat}}=0.3V$ und Ausgangswiderstand $r_{CE} \approx \frac{U_{Early}}{I_{C0}}$\\
 				\hspace{2mm}
 			{\bf Stromübertragungskennlinie (II)}\\
-				Kollektorstrom: $B_N \cdot I_B + I_{CE0} \approx B_N \cdot I_B$\\
+				Kollektorstrom: $I_C = B_N \cdot I_B + I_{CE0} \approx B_N \cdot I_B$\\
 				\hspace{2mm}	
 			{\bf Eingangskennlinie (III)}\\
 				Basisstrom: \smash{$I_B = I_{B_{sat}} \cdot (e^{\frac{U_{BE}}{U_T}}-1)$}\\
@@ -73,8 +72,22 @@
 		\begin{minipage}[c]{5cm}
 			\includegraphics[width=5cm]{./images/BipTraKennlinien.png}
 		\end{minipage}
+		
+	\subsection{Frequenzverhalten}
+		\begin{minipage}{4cm}
+			Kapazitäten: \\
+			\includegraphics[width=3cm]{./images/bip-frequenz-cs}
+		\end{minipage}	
+		\begin{minipage}{6cm}
+			Ersatzschaltbild: \\
+			\includegraphics[width=6cm]{./images/bip-frequenz}
+		\end{minipage}
+		\begin{minipage}{6cm}
+			\[ \underline{h}_{21e} (\omega) \approx \frac{b}{1 + r_{BE} \cdot \left(C_E + C_{BE} \right) \cdot j\omega} \] \\
+			Bei der Transitfrequenz $\omega_t$ ist $h_{21e} = 1$.
+		\end{minipage}
 	
-	\subsubsection{Early-Effekt}
+	\subsection{Early-Effekt}
 		\begin{minipage}[c]{5cm}
 			\includegraphics[width=5cm]{images/early-effekt}
 		\end{minipage}
@@ -87,19 +100,17 @@
 			$I_C = (B_NI_B+I_{CE_0})(1+\frac{U_{CE}}{U_{EA}})$
 		\end{minipage}
 				
-	\subsubsection{Temperaturverhalten}
+	\subsection{Temperaturverhalten}
 		Die maximale Leistung $P_V$ des Transistors muss stets kleiner als 
-		$U_{CE} \cdot I_C$ sein. (Näherung) \\
+		$U_{CE} \cdot I_C$ sein. (Näherung)
 		Zusätzlich muss die Wärme auch über das Gehäuse abgeführt werden können. Deshalb
 		darf $P_V$ maximal $\frac{T_{max}-T_{amb}}{R_{th}}$ sein. ($R_{th}$: Thermischer
 		Widerstand des Gehäuse) \\
 		Der Transistor hat grundsätzlich das gleiche Temperaturverhalten wie die Diode. Somit
 		gilt auch hier: $V_{BE}$ ändert um $-2\frac{mV}{K}$. Somit gilt für den
 		Stromverstärkungsfaktor: $B_N=B_N(T_0)\cdot e^{C_b(T-T_0})$ mit 
-		$C_b \approx 0.6\% \cdot K^{-1}$. Der hohe Temperatureinfluss muss bei der
-		Schaltungsentwicklung berücksichtigt werden. \\
-		
-\newpage		
+		$C_b \approx 0.6\% \cdot K^{-1}$. \\
+				
 	\subsection{Kleinsignalverhalten}
 		Beim Kleinsignal-Ersatzschaltbild wird das Verhalten des Transistors im Arbeitspunkt
 		approximiert . Dazu wird ein Arbeitspunkt $AP$ im Kennlinienfeld eingezeichnet
@@ -163,22 +174,21 @@
 		Zur Reduktion der Speicherzeit $t_s$ kann eine Schottkydiode von der Basis zum 
 		Kollektor geschalten werden. Somit wird $U_{BC}$ limitiert und die Ladung verkleinert.
 		Diese Methode wurde in der 74S- und der 74LS-Familie eingesetzt. \\
-		
+
         \subsubsection{Gegenkopplung}
-        Motivation: Durch Gegenkopplung wird die Verstärkung des Transistors kleiner, doch
-        Bauteiltoleranzen, Temperaturschwankungen und Verzerrungen werden minimiert. \\
-            \begin{minipage}[T]{5.5cm}
-                \includegraphics[height=3cm]{./images/Spannungsgegenkopplung.png}
-            \end{minipage}
-            \begin{minipage}[T]{5.5cm}
-                \includegraphics[height=3cm]{./images/Stromgegenkopplung.png}
-            \end{minipage} \\
-            \begin{minipage}[T]{5.5cm}
+
+            \begin{minipage}{5.5cm}
+                \includegraphics[height=2.5cm]{./images/Spannungsgegenkopplung.png} \\
                 Gegenkopplung durch $R_2$
             \end{minipage}
-            \begin{minipage}[T]{5.5cm}
+            \begin{minipage}{5.5cm}
+                \includegraphics[height=2.5cm]{./images/Stromgegenkopplung.png} \\
                 Gegenkopplung durch $R_4$\\
                 $V_{out} = -\frac{R_3}{R_4}\cdot V_{in}$\\
+            \end{minipage} 
+            \begin{minipage}{5.5cm}
+         	Motivation: Durch Gegenkopplung wird die Verstärkung des Transistors kleiner, doch
+         	Bauteiltoleranzen, Temperaturschwankungen und Verzerrungen werden minimiert.                
             \end{minipage}
             
         \subsubsection{Transistorverstärkerschaltungen}
@@ -200,6 +210,40 @@
                 Kollektorschaltung\\\\
                 \includegraphics[height=3cm]{./images/BipTraKollektorsch.png}
             \end{minipage}
+
+		\begin{multicols}{2}
+		\subsubsection{Stromspiegel}
+			\begin{minipage}{3.5cm}
+				\includegraphics[width=3.5cm]{./images/stromspiegel}
+			\end{minipage}
+			\begin{minipage}{4.5cm}
+				\begin{equation*}
+					I_a \approx I_{ref} \textbf{, da } B \gg 1 \textbf{ und } I_B \ll I_{ref}
+				\end{equation*}
+			\end{minipage}
+
+		\subsubsection{Widlar-Stromspiegel}
+			\begin{minipage}{4cm}
+				\includegraphics[width=4cm]{./images/stromspiegel-widlar}
+			\end{minipage}
+			\begin{minipage}{4cm}
+				Ströme $I_1 \dots I_3$ werden einzeln durch Widerstandsverhältnisse gewichtet: \\
+				\begin{equation*}
+					I_1 = I_{ref} \cdot \frac{R_E}{R_{E1}}
+				\end{equation*}
+			\end{minipage}	
+
+		\subsubsection{Stromspiegel mit Kaskode}
+			\begin{minipage}{3.5cm}
+				\includegraphics[width=3.5cm]{./images/stromspiegel-kaskode} 
+			\end{minipage}
+			\begin{minipage}{4.5cm}
+				$T_1$ als Diode geschaltet, bestimmt $V_{BE2}$ und damit $I_C$ von $T_2,T_3$ \\\\
+				$T_4$ als Diode geschaltet, bestimmt $V_{BE3}$ und damit den Arbeitspunkt \\\\
+				$T_3$ in Basisschaltung, tiefer Eingangswiderstand, kaum Änderung von $U_{C2}$ und damit kaum Stromänderung
+			\end{minipage}
+		\end{multicols}
+							
          \subsubsection{Differenzverstärker}
              \begin{minipage}[T]{12cm}
                  Differenz-Verstärkung

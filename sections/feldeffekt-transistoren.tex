@@ -1,6 +1,9 @@
-\subsection{Feldeffekt-Transistoren}
 
-            \subsubsection{JFET Junction Field Effect Transistor}
+\section{Feldeffekt-Transistoren}
+	\subsection{Übersicht}
+		\includegraphics[height=5cm]{images/Transistortypen}
+		
+    \subsection{Junction FET}
             \begin{minipage}[T]{8cm}
                 JFET als {\bf Konstantstromquelle}:\\
                 benötigter Strom \fbox{$I_D = \frac{U_{GS}}{R_S}$}\\
@@ -13,22 +16,22 @@
             \begin{minipage}[T]{6cm}
                 \includegraphics[height=4cm]{./images/JFETKennlinie.png}
             \end{minipage}
-\hrule
-            \subsubsection{MOSFET Metal Oxide Silicon Field Effect Transistor}
+            
+	\subsection{MOS-FET}
             \begin{minipage}[T]{6cm}
-                \underline{Sperrbereich}\\\\
+                \textbf{Sperrbereich}\\\\
                 $V_{GS} < V_{th} \to I_D = 0$\\
                 typische $V_{th} = 0.5 \dots 1.5V$\\ 
                 \includegraphics[height=4cm]{./images/MOSFETSperrbereich.png}
             \end{minipage}
             \begin{minipage}[T]{6cm}
-                \underline{Widerstands-/Triodenbereich (linear)}\\\\
+                \textbf{Widerstands-/Triodenbereich (linear)}\\\\
                 $V_{GS} > V_{th} $ und $V_{DS}>0$\\
                 $\to I_D$ fliesst\\
                 \includegraphics[height=4cm]{./images/MOSFETLinBereich.png}
             \end{minipage}
             \begin{minipage}[T]{6cm}
-                \underline{S\"attigungs-/Pentodenbereich}\\\\
+                \textbf{Sättigungs-/Pentodenbereich}\\\\
                 $V_{DS} > V_{GS} - V_{th}$ Kanal wird abgeschnürt\\
                 \includegraphics[height=4cm]{./images/MOSFETSaettBereich.png}
             \end{minipage}\\
@@ -90,7 +93,7 @@
             \begin{minipage}[T]{5cm}
                 \includegraphics[width=5cm]{./images/MOSFET_Ersatzsch.png}
             \end{minipage}
-\vspace{1mm}\hrule
+
             \subsubsection{Differenzverstärker}
             \begin{minipage}[T]{14cm}
                 Ausgangswiderstand

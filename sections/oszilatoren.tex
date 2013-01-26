@@ -56,41 +56,42 @@
 		$f = \frac{1}{T_1 + T_2}$
 	\end{minipage}
 \subsubsection{Ringoszilatoren}
-	\begin{multicols}{3}
-	 	\includegraphics[width=6cm]{images/osziRing.png}	
-		\columnbreak
-		
-		\includegraphics[width=6cm]{images/osziRingSignal.png}	
-		\columnbreak
-		
-		\includegraphics[width=6cm]{images/osziRingCMOS.png}
-	\end{multicols}
-	
+	\begin{minipage}[T]{6cm}
+		Schaltung mit Invertern: \\
+		\includegraphics[width=6cm]{images/osziRing.png} \\
+		\[ f_{osc} = \frac{1}{2 \cdot n \cdot t_g} \] 
+	\end{minipage}
+	\begin{minipage}{6cm}
+		Schaltung mit MOS-FETs: \\
+		\includegraphics[width=6cm]{images/osziRingCMOS.png} \\
+	\end{minipage}
+	\begin{minipage}{6cm}
+		Zeitliches Verhalten: \\
+		\includegraphics[width=5.5cm]{images/osziRingSignal.png} \\
+	\end{minipage}	
+
+\newpage	
 \subsection{Tuned Oscillators}
 	Oszillatoren mit Rückkopplung. Schwingbedingung: Verstärkung im gesamten Kreis $=1$. 
 	\subsubsection{LC-Oszillator}
 		\begin{multicols}{2}
+		
 			\textbf{Normaler LC-Oszillator} \\
-			\includegraphics[width=6cm]{images/lcOszillator}
+			\includegraphics[width=6cm]{images/lcOszillator} 
 			
-		\columnbreak
-			$U_2(t) = (1+\frac{R_2}{R_1}) \cdot U_1(t) = V_u \cdot U_1(t)$ \\
-			
-			Daraus folgt die Schwingungsgleichung \\
-			$\frac{d^2 U_1(t)}{dt^2}+2k\omega_0 \frac{dU_1(t)}{dt}+\omega^2U_1(t)=0$ \\
-			
-			und \\
-			$\omega_0 = \frac{1}{\sqrt{L\cdot C}}$
-		\end{multicols}
-		
-		\begin{multicols}{2}
-			\textbf{Colpitts-Oszillator}\\
-			\includegraphics[width=6cm]{images/osziLC.png}\\
+			\begin{multline*}	
+				U_2(t) = (1+\frac{R_2}{R_1}) \cdot U_1(t) = V_u \cdot U_1(t) \\
+				\text{Daraus folgt die Schwingungsgleichung:} \\
+				\frac{d^2 U_1(t)}{dt^2}+2k\omega_0 \frac{dU_1(t)}{dt}+\omega^2U_1(t)=0 \\
+				\text{und somit } \omega_0 = \frac{1}{\sqrt{L\cdot C}} \\
+			\end{multline*}
 			
 		\columnbreak
 		
-			$\omega_0=\frac{1}{\sqrt{L\frac{C_1 C_2}{C_1+C_2}}}$\\
-			
+			\textbf{Colpitts-Oszillator} \\
+			\includegraphics[width=7cm]{images/osziLC.png} \\
+		
+			\[ \omega_0=\frac{1}{\sqrt{L\frac{C_1 C_2}{C_1+C_2}}} \] \\
 		\end{multicols}
 
 	\subsubsection{Quarz-Oszilator}

@@ -84,6 +84,7 @@
 		\begin{minipage}{5cm}
       		\includegraphics[width=5cm]{./images/invertadd.png}
       	\end{minipage}\\
+\hrule
 
 		\begin{minipage}[c]{12cm}
 		\subsubsection{Gewichteter Subtrahierer}
@@ -97,7 +98,7 @@
 			\begin{minipage}{5cm}
             	\includegraphics[width=5cm]{./images/gewichtsub.png}
             \end{minipage}\\
-\hrule
+
 
 		\begin{minipage}[b]{12cm}
 		\subsubsection{Mehrfach-Addierer-Subtrahierer} 		
@@ -156,7 +157,8 @@
        	 \end{minipage}
        	 \begin{minipage}[c]{5cm}
        	 	\includegraphics[width=5cm]{./images/tglied.png}
-       	 \end{minipage}      
+       	 \end{minipage}   
+\hrule   
  	 
        	 \begin{minipage}[c]{12cm}
        	 \subsubsection{Negative Impedance Converter}
@@ -168,7 +170,7 @@
        	 \begin{minipage}[c]{5cm}
        	 	\includegraphics[width=5cm]{./images/neg-imp-conv.png}
        	 \end{minipage}
-\hrule
+
    
 		\begin{minipage}[c]{12cm}        
         \subsubsection{Differentiator}
@@ -264,7 +266,7 @@
         \begin{minipage}{6cm}
             \includegraphics[width=6cm]{./images/i-schmittFreieSchwellen.png} 
         \end{minipage}\\
-
+    \hrule
 
 	\subsection{Fehlereinflüsse des Opamp}
 		\subsubsection{Verstärkungsfehler bei endlicher Closed-Loop-Verstärkung}
@@ -350,20 +352,21 @@
 
 		\subsubsection{Power Supply Rejection Ratio PSRR}
 		Schwankungen der Speisespannungen können zu Offset am Ausgang führen.
-		Der PSRR beschreibt Unterdrückung solcher Beeinflussungen. \bigskip \\
-		$PSRR_{lin}=\frac{dV_{supply}}{dV_{os}}$ \bigskip \\
+		Der PSRR beschreibt Unterdrückung solcher Beeinflussungen. 
 		Meist kein Problem dank Stützkondensatoren. 
-		Allenfalls Probleme bei hohen Frequenzen.
+		Allenfalls Probleme bei hohen Frequenzen. \\
+		$PSRR_{lin}=\frac{dV_{supply}}{dV_{os}}$  \\
+		
 		
 		\subsubsection{Common Mode Rejection Ratio CMRR}
-		Schwankungen der Eingangsspannungen können am Ausgang einen Offset verursachen. \bigskip \\
-		$CMRR_{lin}=\frac{dV_{CM}}{dV_{os}}$ mit $V_{CM}=V_{opp}=V_{opn}$ \bigskip \\
-		Bei invertierenden Verstärkern irrelevant, da $V_{opn}=\text{konst}=V_{AGND}$.
+		Schwankungen der Eingangsspannungen können am Ausgang einen Offset verursachen. 
+		Bei invertierenden Verstärkern irrelevant, da $V_{opn}=\text{konst}=V_{AGND}$. \\
+		$CMRR_{lin}=\frac{dV_{CM}}{dV_{os}}$ mit $V_{CM}=V_{opp}=V_{opn}$ \\
 
 		\subsubsection{Zusammenfassung aller Fehlereinflüsse}
       $V_{out\hspace{1mm}E\hspace{1mm}total}=A_{CL+}\cdot\left[\left|V_{OS}\right|+\frac{\left|V_{CM}\right|}{CMRR}
             	+\frac{\left|\Delta V_{Supply}\right|}{PSRR}\right]+\left|I_{OS}\right|R_F$\\
-
+\hrule
 	\subsection{Dynamische Eigenschaften des Opamp}
 		\begin{tabular}{ll}
 			dB-Verstärkung:&
@@ -378,22 +381,22 @@
 			Bandbreite des gegengekoppelten {\it invertierenden} Verstärkers: &
 			$f_{CL}=\frac{GBP}{\left| A_{CL \hspace{1mm}lin}\right|+1}$\\
 		\end{tabular}\\
-		{\bf Gesetz vom Konstanten Verstärkungs-Bandbreite-Produkt:} \\
 		Für jeden Punkt auf der mit -20dB abfallenden Frequenzgang-Gerade ist das
 		Produkt aus Verstärkung und zugehöriger Frequenz konstant gleich GBP, d.h. $A_{lin}\cdot f=GBP=konst$\\
 		\subsubsection{Slew-Rate}
-			\begin{tabular}{ll}
-				min. SR bei einem Sprungsignal &
-				$SR\geq\frac{0.8V_{step}}{t_{anstieg}}$\\ 
-				min. SR bei einem Sinussignal & 
-				$SR\geq V_{amplitude}\omega=V_{amplitude}2\pi f$\\
-				typische Slew-Rate: & $SR \approx 0.5 \dots 50 \frac{V}{\mu s}$
-			\end{tabular}
 			
 			\begin{minipage}{8cm}
-				\includegraphics[height=5cm]{./images/slew-rate.png}\\
+				\includegraphics[height=4cm]{./images/slew-rate.png}\\
 			\end{minipage}
 			\begin{minipage}{8cm}
+						\begin{tabular}{ll}
+							min. SR bei einem Sprungsignal &
+							$SR\geq\frac{0.8V_{step}}{t_{anstieg}}$\\ 
+							min. SR bei einem Sinussignal & 
+							$SR\geq V_{amplitude}\omega=V_{amplitude}2\pi f$\\
+							typische Slew-Rate: & $SR \approx 0.5 \dots 50 \frac{V}{\mu s}$
+						\end{tabular} \\
+			
 				{\bf Anstiegszeit des Ausgangs:} \\
 				\begin{tabular}{ll}
 					$t_{rout}$ & = $\sqrt{t_{rin}^2 + t_{rAmp}^2}$ \\
@@ -404,7 +407,24 @@
 				\end{tabular}
 			\end{minipage}
 			
-       \subsection{Gesteuerte Quellen}
+	\subsection{Aufbau mit Transistoren}	
+    \begin{minipage}{8cm}
+   		\includegraphics[width=8cm]{images/OP-aus-Transistoren}
+    \end{minipage}
+    \begin{minipage}{8cm}
+    	\begin{itemize}
+    		\item $T_1,T_2$: Differenzverstärker
+    		\item $T_3,T_4$: Stromspiegel-Last
+    		\item $T_5$: Darlington-Transistor
+    		\item $T_6,T_7$: Dioden als Level-Shifter
+    		\item $T_8,T_9$: Klasse AB Ausgangsstufe
+    		\item $I_1,I_2$: Stromquellen, realisiert mit Stromspiegeln
+    		\item $C_k$: Kompensations-C, verhindert Oszillation
+    	\end{itemize}
+    \end{minipage}
+    
+    
+    \subsection{Gesteuerte Quellen}
 			\begin{tabular}{|c|c|c|}
 				\hline
 				\multirow{2}{*}{Steuergrösse} & \multicolumn{2}{c|}{Ausgangsgrösse}\\ \cline{2-3}
@@ -417,7 +437,7 @@
 									& $v_{out}=v_{in} \cdot A_v$			& $i_{out} = v_{in} \cdot g_m$			\\
 									& $A_v$: Spannungsverstärkung			& $g_m$: Transkonduktanz				\\ \cline{2-3}
 									& Normaler OP-Amp Verstärker
-									& \includegraphics[width=4cm,trim=0 0 0 -5]{./images/vccs_schaltung.png}		\\
+									& \includegraphics[width=4cm,trim=0 0 0 -7]{./images/vccs_schaltung.png}		\\
 									&	& $I_2=\frac{V_1}{R_1}$ bzw. $I_2=-\frac{V_1}{R_1}$							\\ 	\hline	
 				\multirow{8}{*}{I}	& Stromgesteuerte Spannungsquelle		& Stromgesteuerte Stromquelle			\\
 									& \bf{CCVS}								& \bf{CCCS}								\\
