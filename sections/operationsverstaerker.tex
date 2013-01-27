@@ -4,31 +4,32 @@
 		Der Eingangsstrom ist immer $0$! \\
 		Der Ausgang wird immer so geregelt, dass die Eingänge das gleiche Potential haben!
 		\end{center}\end{minipage} }\end{center} \par
+		
 	\subsection{Opamp Schaltungen}
 		\subsubsection{Invertierender Verstärker}
 			Beim invertierenden Verstärker ist die Ausgangsspannung gegenphasig
-      zur Eingangsspannung.\\
-			\begin{minipage}[T]{12cm}
-       	\begin{tabular}{ll}
-       	Closed-Loop Spannung: & 
-       	$A_{CL}=\frac{v_{out}}{v_{in}}=-\frac{R_F}{R_1}$\\
-       	& $v_{out} = -v_{in}\cdot\frac{R_F}{R_1}$\\
-       	$i_1=\frac{v_{in}+v_d}{R_1}$ & 
-      	$i_F=-\frac{v_{out}+v_d}{R_F}$\\
-       	Ausgangswiderstand des I-Verstärkers: &
-       	$r_{out}=0\Omega$\\
-       	Eingangswiderstand des I-Verstärkers: & 
-       	$r_{in}=R_1$\\
-       	OP mit Offset: & \begin{tabular}{l l}
-       		$v_{out}$ &$=  \frac{R_1+R_F}{R_1} \cdot (v_0+v_d)$ \\
-       		& $-\frac{R_F}{R_1} \cdot v_{in}$
-       		\end{tabular} \\
-       		Für $A_{OL} \neq \gg A_{CL}$: & $v_{out} = 
-       		\frac{A_{OL}}{1+A_{OL}\cdot \frac{R_1}{R_1+R_2}}\cdot (v_{in}-v_{os})$
-       	\end{tabular}
-      \end{minipage}
-			\begin{minipage}{6cm}
-       	\includegraphics[width=6cm]{./images/i-verstaerker.png}
+      		zur Eingangsspannung.\\
+		\begin{minipage}[T]{13cm}
+       		\begin{tabular}{ll}
+       			Closed-Loop Spannung: & 
+       				$A_{CL}=\frac{v_{out}}{v_{in}}=-\frac{R_F}{R_1}$\\
+       				& $v_{out} = -v_{in}\cdot\frac{R_F}{R_1}$\\
+       				$i_1=\frac{v_{in}+v_d}{R_1}$ & 
+      				$i_F=-\frac{v_{out}+v_d}{R_F}$\\
+       			Ausgangswiderstand:&
+       				$r_{out}=0\Omega$\\
+       			Eingangswiderstand: & 
+       				$r_{in}=R_1$\\
+       			OP mit Offset: $(v_{os}=v_d)$ & 
+       					$v_{out} =  \frac{R_1+R_F}{R_1} \cdot (v_{_{AGND}}+v_{os})
+       					-\frac{R_F}{R_1} \cdot v_{in}$ \\
+       			Für $A_{OL} \neq \gg A_{CL}$: & $v_{out} = 
+       			\frac{1}{\frac{R_1}{R_1+R_F}+\frac{1}{A_{OL}}}\cdot
+       			\left( (v_{_{AGND}}+v_{os}) - \frac{R_F}{R_1+R_F} \cdot v_{in} \right)$
+       		\end{tabular}
+       	\end{minipage}
+		\begin{minipage}{6cm}
+       		\includegraphics[width=6cm]{./images/i-verstaerker.png}
       \end{minipage}\\
 \hrule
       
@@ -43,14 +44,14 @@
         	& $v_{out} = v_{in}\cdot(\frac{R_F}{R_1}+1)$ \\
         	$i_1=\frac{v_{in}-v_d}{R_1}$ &
         	$i_F=\frac{v_{out}}{R_F+R_1}$\\
-          Ausgangswiderstand des NI-Verstärkers: &
+          Ausgangswiderstand: &
           $r_{out}=0\Omega$\\
-          Eingangswiderstand des NI-Verstärkers: &
+          Eingangswiderstand: &
           $r_{in}=\infty$\\
           OP mit Offset: &
-          $v_{out} \cong \frac{R_1+R_F}{R_1} \cdot (v_{in}-v_{offset})$\\
+          $v_{out} \cong \frac{R_1+R_F}{R_1} \cdot (v_{in}+v_{os})$\\
           Für $A_{OL} \neq \gg A_{CL}$: & $v_{out} = 
-          \frac{1}{\frac{R_1}{R_1+R_2}+\frac{1}{A_{OL}}}\cdot v_{in}$ \\
+          \frac{1}{\frac{R_1}{R_1+R_F}+\frac{1}{A_{OL}}}\cdot (v_{in}+v_{os})$ \\
         \end{tabular}
         
         Für $R_1 \to \infty$ und $R_F \to 0$ wird der Operationsverstärker zu einem
