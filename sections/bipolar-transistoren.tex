@@ -64,7 +64,7 @@
 				\hspace{2mm}	
 			{\bf Eingangskennlinie (III)}\\
 				Basisstrom: \smash{$I_B = I_{B_{sat}} \cdot (e^{\frac{U_{BE}}{U_T}}-1)$}\\
-				Kleinsignalwiderstand: $r_{BE} = \frac{m\cdot V_T}{I_{B0}}$ mit $I_{B0}$: Arbeitspunktstrom\\
+				Kleinsignalwiderstand: $r_{BE} = \frac{m\cdot U_T}{I_{B0}}$ mit $I_{B0}$: Arbeitspunktstrom\\
 				\hspace{2mm}
 			{\bf Spannungsrückwirkungskennlinie (IV)}\\
 				$U_{BE} = \eta \cdot U_{CE}$ mit $\eta \approx 0.1 \%$ (kann meist vernachlässigt werden!)\\
@@ -119,10 +119,10 @@
 			\includegraphics[width=6cm]{images/bip-kleinsignal}
 		\end{minipage}
 		\begin{minipage}[c]{6cm}
-			$h_{11e} = r_{BE} = \frac{dU_{BE}}{dI_{B}} = \frac{U_T}{I_{B_0}}$ \\
+			$h_{11e} = r_{BE} = \frac{dU_{BE}}{dI_{B}} = \frac{m \cdot U_T}{I_{B_0}}$ \\
 			$h_{12e} = \eta = \frac{dU_{BE}}{dU_{CE}} \approx 0$ \\
 			$h_{21e} = b = \frac{dI_C}{dI_B} = B_N(1+\frac{U_{CE_0}}{U_{EA}}) \approx B_N$ \\
-			$h_{22e} = \frac{1}{r_{CE}} = \frac{dI_C}{dU_{CE}} = \frac{U_{EA}}{I_{C0}}$ \\
+			$h_{22e} = \frac{1}{r_{CE}} = \frac{dI_C}{dU_{CE}} = \frac{I_{C0}}{U_{EA}}$ \\
 			$S = \frac{b}{r_{BE}} = \frac{I_C}{m \cdot U_T}$
 		\end{minipage}
 		\begin{minipage}[c]{6cm}
@@ -246,25 +246,30 @@
 							
          \subsubsection{Differenzverstärker}
              \begin{minipage}[T]{12cm}
-                 Differenz-Verstärkung
-                 \hspace{8.4mm}\fbox{$v_d = \frac{U_{A_d}}{U_{E_d}} = -S\cdot R_C$} ; S = Steilheit\\
-                 Gleichtaktverstärkung
-                 \hspace{8.1mm}\fbox{$v_{gl} = -\frac{R_C}{2\cdot R_E}$}\\
-                 Gleichtaktunterdrückung
-                 \hspace{3.8mm}\fbox{$G = \frac{v_d}{v_{gl}} = 2\cdot S \cdot R_E$}
+             	Der Differenzverstärker ist symmetrisch, d.h. $U_{a1} - U_{a_{AP}} = U_{a_{AP}} - U_{a2}$ \\
+             	
+             	\begin{tabular}{ll}
+             	differentieller Eingangswiderstand & $r_e = 2 \cdot r_{BE}$ \\
+             	differentieller Ausgangswiderstand & $r_a = (R_C || r_{CE})$ \\
+				Differenz-Verstärkung & $v_d = \frac{U_{A_d}}{U_{E_d}} = -S\cdot r_A \approx -S\cdot R_C$ \\
+				Gleichtaktverstärkung &  $v_{gl} = -\frac{R_C}{2\cdot R_E}$ \\
+				Gleichtaktunterdrückung & $G = \frac{v_d}{v_{gl}} = 2\cdot S \cdot R_E$
+				\end{tabular}
              \end{minipage}
              \begin{minipage}{4cm}
-                 \includegraphics[height=3cm]{./images/BipTraDiffAmp.png}
+                 \includegraphics[height=4cm]{./images/BipTraDiffAmp.png}
              \end{minipage}\\
              
          \subsubsection{Leistungsendstufen}
              \begin{minipage}[T]{4.7cm}
-                 Klasse A-Verstärker\\
-                 \includegraphics[height=4cm]{./images/KlassA_Amp.png}
+                 Klasse A-Verstärker \\
+                 \includegraphics[height=4cm]{./images/KlassA_Amp.png} \\
+                 	$ \eta = \frac{P_\sim}{P_=} \leq 25 \% $
              \end{minipage}
              \begin{minipage}[T]{4.7cm}
-                 Klasse B-Verst\"arker\\
-                 \includegraphics[height=4cm]{./images/KlassB_Amp.png}
+                 Klasse B-Verstärker \\
+                 \includegraphics[height=4cm]{./images/KlassB_Amp.png} \\
+                 	$ \eta \leq 78,5 \% $
              \end{minipage}
              \begin{minipage}[T]{4.7cm}
                  Klasse AB-Verstärker\\

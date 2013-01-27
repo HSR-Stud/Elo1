@@ -131,7 +131,7 @@
             \end{minipage}\\
 \hrule
 
-		\begin{minipage}[c]{12cm}
+		\begin{minipage}{12cm}
 		\subsubsection{Instrumentenverstärker}
 			1. Stufe: Invertierender Verstärker \\
 			$\Delta V_{opo}=V_{opo1}-V_{opo2}=(1+\frac{R_{F1}+R_{F2}}{R_G})\cdot(V_{in2}-V_{in1})$
@@ -142,12 +142,12 @@
 			- zur Verstärkung sehr kleiner Differenzspannungen (z.B. Brückensensoren) \\
 			- Oft als fertige Bauteile mit externem $R_G$ und Verstärkungen bis $1000$. \\
 			\end{minipage}
-			\begin{minipage}[c]{6cm}
-          		\includegraphics[width=6cm]{./images/instramp.png} 
+			\begin{minipage}{7cm}
+          		\includegraphics[width=7cm]{./images/instramp.png} 
        	 	\end{minipage}\\
 \hrule     
  	 
-      	 \begin{minipage}[c]{12cm}	
+      	 \begin{minipage}{12cm}	
        	 \subsubsection{T-Glied in Rückkopplung}
        	 	Für $A \to \infty$ (idealer OP) gilt: \smallskip \\
        	 	$v_u=-\frac{R_2 \cdot R_3 + R_2 \cdot R_4 + R_3 \cdot R_4}{R_1 \cdot R_3}$
@@ -156,8 +156,8 @@
        	 	z.B.$R_1=R_3=1k\Omega$ und $R_2=R_4=10k\Omega$ ergibt $v_u=-120$ 
        	 	(Vergleich: $v_u=-10$ bei inv. Verstärker) \\
        	 \end{minipage}
-       	 \begin{minipage}[c]{5cm}
-       	 	\includegraphics[width=5cm]{./images/tglied.png}
+       	 \begin{minipage}{6cm}
+       	 	\includegraphics[width=6cm]{./images/tglied.png}
        	 \end{minipage}   
 \hrule   
  	 
@@ -206,7 +206,18 @@
 		\begin{minipage}[c]{5cm}
           	\includegraphics[width=5cm]{./images/integrator.png} 
         \end{minipage}\\
-\hrule     	
+\hrule
+
+		\begin{minipage}{12cm}
+			\subsubsection{Buffer}
+				grosser Eingangswiderstand, kleiner Ausgangswiderstand \\
+				Es gilt: $v_{out} = \frac{A_{OL}}{1+A_{OL}} (v_{in} + v_{os})$ \\
+				$v_{out} = v_{in} + v_{os} \text{ für grosse } A_{ol}$
+		\end{minipage}
+		\begin{minipage}{5cm}
+			\includegraphics[width=4cm]{./images/op-buffer}
+		\end{minipage}
+\hrule    	
 		
 		\begin{minipage}[c]{12cm}	
 		\subsubsection{Komparatorschaltung}
