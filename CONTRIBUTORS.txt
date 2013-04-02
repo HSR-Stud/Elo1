@@ -1,5 +1,6 @@
 Hannes Badertscher (hbaderts)
 Sven Körner (skoerner)
+Andreas Waldvogel (awaldvog)
 Christian Gwerder (cgwerder)
 Jürg Rast (jrast)
 Fabian Braun
